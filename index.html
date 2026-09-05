@@ -18,11 +18,11 @@ html{
 }
 
 body{
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:Georgia,"Times New Roman",serif;
     background:
-        radial-gradient(circle at 15% 10%, rgba(255,180,210,.30), transparent 30%),
-        radial-gradient(circle at 85% 80%, rgba(190,200,255,.25), transparent 32%),
-        linear-gradient(135deg,#fff8fb,#faf7ff,#ffffff);
+        radial-gradient(circle at 15% 10%,rgba(255,190,215,.25),transparent 30%),
+        radial-gradient(circle at 85% 85%,rgba(205,200,255,.22),transparent 30%),
+        linear-gradient(135deg,#fff8fb,#faf7ff,#fff);
     color:#392936;
     overflow-x:hidden;
 }
@@ -38,55 +38,54 @@ body{
     justify-content:center;
     text-align:center;
     background:
-        radial-gradient(circle at center,
-        rgba(255,255,255,.98),
-        rgba(255,225,237,.95));
-    transition:1.2s ease;
+        radial-gradient(circle at center,#fff 0%,#ffe8f1 100%);
+    transition:opacity 1.1s ease;
 }
 
 .intro-box{
-    padding:40px 22px;
-    animation:introUp 1.5s ease;
+    padding:30px 20px;
+    animation:introFade 1.4s ease both;
 }
 
 .small{
     font-family:Arial,sans-serif;
-    font-size:12px;
-    letter-spacing:5px;
+    font-size:11px;
+    letter-spacing:4px;
     color:#a66a83;
     margin-bottom:18px;
 }
 
 .intro-title{
-    font-size:clamp(45px,12vw,85px);
+    font-size:clamp(45px,12vw,82px);
+    font-weight:normal;
     color:#713951;
-    margin-bottom:35px;
-    text-shadow:0 10px 35px rgba(125,63,91,.16);
+    margin-bottom:32px;
 }
 
 .open-btn{
     border:0;
-    padding:17px 32px;
+    padding:16px 30px;
     border-radius:50px;
     font-family:Arial,sans-serif;
-    font-size:14px;
-    letter-spacing:2px;
-    color:white;
-    background:linear-gradient(135deg,#c47b99,#713951);
-    box-shadow:0 15px 40px rgba(125,63,91,.30);
+    font-size:13px;
+    letter-spacing:1.5px;
+    color:#fff;
+    background:linear-gradient(135deg,#bf7897,#713951);
+    box-shadow:0 12px 30px rgba(113,57,81,.22);
     cursor:pointer;
-    transition:.4s ease;
+    transition:transform .3s ease,box-shadow .3s ease;
 }
 
 .open-btn:hover{
-    transform:translateY(-5px) scale(1.04);
+    transform:translateY(-3px);
+    box-shadow:0 16px 35px rgba(113,57,81,.28);
 }
 
 /* ================= MAIN ================= */
 
 main{
     display:none;
-    animation:pageIn 1.5s ease;
+    animation:mainFade 1.2s ease both;
 }
 
 /* ================= HERO ================= */
@@ -97,136 +96,120 @@ main{
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:70px 20px;
-    position:relative;
+    padding:60px 20px;
 }
 
 .hero-content{
-    max-width:850px;
+    max-width:800px;
 }
 
 .eyebrow{
     font-family:Arial,sans-serif;
     font-size:11px;
-    letter-spacing:5px;
+    letter-spacing:4px;
     color:#a66a83;
     margin-bottom:20px;
+    animation:fade 1.4s ease both;
 }
 
 h1{
-    font-size:clamp(48px,12vw,100px);
+    font-size:clamp(48px,12vw,96px);
     line-height:1.05;
     font-weight:normal;
     color:#713951;
-    margin-bottom:28px;
-    animation:titleReveal 1.5s ease;
+    margin-bottom:25px;
+    animation:softUp 1.5s .15s ease both;
 }
 
 .hero p{
-    max-width:650px;
+    max-width:620px;
     margin:auto;
-    font-size:18px;
+    font-size:17px;
     line-height:1.9;
     color:#725b67;
-    animation:fadeUp 1.8s ease;
+    animation:softUp 1.5s .35s ease both;
 }
 
 /* ================= MESSAGE ================= */
 
 .message{
-    padding:100px 20px;
+    padding:90px 20px;
     text-align:center;
 }
 
 .card{
-    max-width:760px;
+    max-width:750px;
     margin:auto;
-    padding:50px 32px;
+    padding:45px 30px;
     border:1px solid rgba(255,255,255,.8);
-    border-radius:32px;
-    background:rgba(255,255,255,.50);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    box-shadow:
-        0 30px 80px rgba(100,60,80,.12),
-        inset 0 1px 0 rgba(255,255,255,.9);
-    transition:.5s ease;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 35px 90px rgba(100,60,80,.17);
+    border-radius:28px;
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    box-shadow:0 20px 55px rgba(80,50,70,.10);
 }
 
 .card h2{
     color:#7d3f5b;
-    font-size:34px;
+    font-size:32px;
     font-weight:normal;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .card p{
-    line-height:2;
     font-size:17px;
+    line-height:2;
     color:#705966;
 }
 
 /* ================= GALLERY ================= */
 
 .gallery-section{
-    padding:110px 18px;
+    padding:100px 18px;
     text-align:center;
 }
 
 .section-label{
     font-family:Arial,sans-serif;
-    font-size:11px;
-    letter-spacing:5px;
+    font-size:10px;
+    letter-spacing:4px;
     color:#a66a83;
-    margin-bottom:14px;
+    margin-bottom:12px;
 }
 
 .gallery-title{
-    font-size:44px;
+    font-size:42px;
     font-weight:normal;
     color:#713951;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .gallery{
-    max-width:1100px;
+    width:100%;
+    max-width:1050px;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:28px;
+    gap:24px;
 }
 
 .photo-card{
-    position:relative;
     overflow:hidden;
-    border-radius:28px;
-    padding:7px;
+    border-radius:25px;
+    padding:6px;
     background:rgba(255,255,255,.72);
-    box-shadow:
-        0 20px 55px rgba(75,45,60,.13),
-        inset 0 0 0 1px rgba(255,255,255,.8);
+    box-shadow:0 18px 45px rgba(70,45,60,.12);
 
     opacity:0;
-    transform:translateY(70px) scale(.96);
+    transform:translateY(25px);
     transition:
-        opacity 1s ease,
-        transform 1s cubic-bezier(.2,.8,.2,1),
-        box-shadow .5s ease;
+        opacity .8s ease,
+        transform .8s ease;
 }
 
 .photo-card.show{
     opacity:1;
-    transform:translateY(0) scale(1);
-}
-
-.photo-card:nth-child(1),
-.photo-card:nth-child(4){
-    margin-top:-18px;
+    transform:translateY(0);
 }
 
 .photo-card img{
@@ -234,108 +217,98 @@ h1{
     width:100%;
     aspect-ratio:4/5;
     object-fit:cover;
-    border-radius:22px;
+    border-radius:20px;
 
-    transform:scale(1.04);
-    transition:transform 1.2s cubic-bezier(.2,.8,.2,1);
+    /* Very small animation = smooth */
+    transform:scale(1.01);
+    transition:transform 1.2s ease;
 }
 
 .photo-card.show img{
     transform:scale(1);
 }
 
-.photo-card:hover{
-    transform:translateY(-10px) scale(1.02);
-    box-shadow:0 30px 70px rgba(75,45,60,.23);
-}
-
 .photo-card:hover img{
-    transform:scale(1.07);
+    transform:scale(1.025);
 }
 
 /* ================= FINAL ================= */
 
 .final{
-    min-height:65vh;
+    min-height:60vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:80px 20px;
+    padding:70px 20px;
 }
 
 .final-box{
-    max-width:720px;
+    max-width:700px;
 }
 
 .final h2{
-    font-size:clamp(38px,9vw,65px);
-    font-weight:normal;
+    font-size:clamp(38px,9vw,62px);
     line-height:1.15;
+    font-weight:normal;
     color:#713951;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .final p{
-    font-size:18px;
+    font-size:17px;
     line-height:1.9;
     color:#705966;
 }
 
 footer{
     text-align:center;
-    padding:35px 20px;
+    padding:30px 20px;
     font-family:Arial,sans-serif;
-    color:#a68191;
-    font-size:12px;
+    font-size:11px;
     letter-spacing:1px;
+    color:#a68191;
 }
 
 /* ================= FLOWERS ================= */
 
 .flower{
     position:fixed;
-    top:-60px;
-    z-index:8000;
+    top:-35px;
+    z-index:5000;
     pointer-events:none;
-    animation:fall linear forwards;
-    filter:drop-shadow(0 4px 6px rgba(0,0,0,.08));
     user-select:none;
+
+    animation:flowerFall linear forwards;
 }
 
-@keyframes fall{
+@keyframes flowerFall{
 
     0%{
-        transform:
-            translate3d(0,-60px,0)
-            rotate(0deg);
+        transform:translate3d(0,-40px,0) rotate(0deg);
         opacity:0;
     }
 
-    10%{
-        opacity:1;
+    12%{
+        opacity:.8;
     }
 
     50%{
-        transform:
-            translate3d(35px,55vh,0)
-            rotate(220deg);
+        transform:translate3d(18px,55vh,0) rotate(180deg);
     }
 
     100%{
-        transform:
-            translate3d(-40px,110vh,0)
-            rotate(500deg);
-        opacity:.15;
+        transform:translate3d(-12px,108vh,0) rotate(330deg);
+        opacity:0;
     }
 }
 
-/* ================= ANIMATIONS ================= */
+/* ================= SIMPLE ANIMATIONS ================= */
 
-@keyframes introUp{
+@keyframes introFade{
     from{
         opacity:0;
-        transform:translateY(35px);
+        transform:translateY(18px);
     }
     to{
         opacity:1;
@@ -343,34 +316,28 @@ footer{
     }
 }
 
-@keyframes fadeUp{
+@keyframes mainFade{
     from{
         opacity:0;
-        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes fade{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+@keyframes softUp{
+    from{
+        opacity:0;
+        transform:translateY(18px);
     }
     to{
         opacity:1;
         transform:translateY(0);
-    }
-}
-
-@keyframes titleReveal{
-    from{
-        opacity:0;
-        transform:translateY(30px) scale(.97);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-}
-
-@keyframes pageIn{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
     }
 }
 
@@ -380,18 +347,16 @@ footer{
 
     .gallery{
         grid-template-columns:1fr;
-        gap:22px;
-        max-width:430px;
-    }
-
-    .photo-card:nth-child(1),
-    .photo-card:nth-child(4){
-        margin-top:0;
+        gap:20px;
     }
 
     .gallery-title{
-        font-size:36px;
-        margin-bottom:42px;
+        font-size:35px;
+        margin-bottom:40px;
+    }
+
+    .photo-card{
+        transform:translateY(18px);
     }
 
     .card{
@@ -405,17 +370,13 @@ footer{
     .hero p{
         font-size:16px;
     }
-
-    .small{
-        letter-spacing:4px;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= OPEN SCREEN ================= -->
+<!-- INTRO -->
 
 <section id="intro">
 
@@ -438,7 +399,7 @@ footer{
 </section>
 
 
-<!-- ================= BIRTHDAY ================= -->
+<!-- BIRTHDAY PAGE -->
 
 <main id="birthday">
 
@@ -473,9 +434,7 @@ footer{
 
         <div class="card">
 
-            <h2>
-                For You ✨
-            </h2>
+            <h2>For You ✨</h2>
 
             <p>
                 Some people make ordinary moments feel special.
@@ -492,7 +451,7 @@ footer{
     </section>
 
 
-    <!-- PREMIUM PHOTO SECTION -->
+    <!-- PHOTOS -->
 
     <section class="gallery-section">
 
@@ -565,7 +524,7 @@ footer{
 
 <script>
 
-/* ================= OPEN ================= */
+/* ================= OPEN PAGE ================= */
 
 function openBirthday(){
 
@@ -579,24 +538,21 @@ function openBirthday(){
         intro.style.display = "none";
         birthday.style.display = "block";
 
-        startFlowerRain();
-        setupPhotoAnimation();
+        startFlowers();
+        photoReveal();
 
-    },800);
+    },1100);
 }
 
 
-/* ================= CONTINUOUS FLOWERS ================= */
+/* ================= SMOOTH FLOWERS ================= */
 
-const flowers = [
+const flowerList = [
     "🌸",
     "🌷",
-    "🌹",
     "🌺",
     "💮",
-    "🌼",
-    "✨",
-    "💗"
+    "🌼"
 ];
 
 function createFlower(){
@@ -605,20 +561,19 @@ function createFlower(){
 
     flower.className = "flower";
 
-    flower.innerHTML =
-        flowers[Math.floor(Math.random()*flowers.length)];
+    flower.textContent =
+        flowerList[
+            Math.floor(Math.random()*flowerList.length)
+        ];
 
     flower.style.left =
         Math.random()*100 + "vw";
 
     flower.style.fontSize =
-        (15 + Math.random()*22) + "px";
+        (14 + Math.random()*12) + "px";
 
     flower.style.animationDuration =
-        (5 + Math.random()*7) + "s";
-
-    flower.style.opacity =
-        (.5 + Math.random()*.5);
+        (7 + Math.random()*5) + "s";
 
     document.body.appendChild(flower);
 
@@ -630,58 +585,53 @@ function createFlower(){
 }
 
 
-function startFlowerRain(){
+function startFlowers(){
 
-    /* Initial burst */
+    /* Small initial amount */
 
-    for(let i=0;i<55;i++){
+    for(let i=0;i<18;i++){
 
         setTimeout(function(){
             createFlower();
-        },i*70);
+        },i*180);
 
     }
 
-    /* Continuous flowers */
+    /* Slow continuous rain */
 
     setInterval(function(){
 
         createFlower();
 
-    },260);
-
+    },650);
 }
 
 
-/* ================= PHOTO ANIMATION ================= */
+/* ================= PHOTO REVEAL ================= */
 
-function setupPhotoAnimation(){
+function photoReveal(){
 
     const cards =
         document.querySelectorAll(".photo-card");
 
     const observer =
-        new IntersectionObserver(
+        new IntersectionObserver(function(entries){
 
-            function(entries){
+            entries.forEach(function(entry){
 
-                entries.forEach(function(entry){
+                if(entry.isIntersecting){
 
-                    if(entry.isIntersecting){
+                    entry.target.classList.add("show");
 
-                        entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
 
-                    }
+                }
 
-                });
+            });
 
-            },
-
-            {
-                threshold:0.15
-            }
-
-        );
+        },{
+            threshold:.12
+        });
 
 
     cards.forEach(function(card){
@@ -689,7 +639,6 @@ function setupPhotoAnimation(){
         observer.observe(card);
 
     });
-
 }
 
 </script>
