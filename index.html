@@ -1,106 +1,559 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-function openPage(){
+<title>For Muskan 🌸</title>
 
-    const screen = document.getElementById("openScreen");
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    /* OPEN SCREEN HIDE */
-    screen.classList.add("hide");
+html{
+    scroll-behavior:smooth;
+}
 
-    /* FLOWER RAIN */
-    for(let i = 0; i < 80; i++){
+body{
+    background:#100813;
+    color:white;
+    font-family:Georgia,serif;
+    overflow-x:hidden;
+}
 
-        const flower = document.createElement("div");
+/* ================= OPEN SCREEN ================= */
 
-        const flowers = [
-            "🌸",
-            "🌷",
-            "🌺",
-            "🌼",
-            "💮",
-            "🌹"
-        ];
+.open-screen{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
 
-        flower.innerHTML =
-            flowers[Math.floor(Math.random() * flowers.length)];
+    background:
+        radial-gradient(circle at 50% 35%,#7d426b 0%,#35182f 30%,#130913 75%);
 
-        flower.style.position = "fixed";
-        flower.style.left = Math.random() * 100 + "vw";
-        flower.style.top = "-50px";
-        flower.style.fontSize =
-            (18 + Math.random() * 28) + "px";
+    transition:1.2s ease;
+}
 
-        flower.style.zIndex = "10000";
-        flower.style.pointerEvents = "none";
+.open-screen.hide{
+    opacity:0;
+    transform:scale(1.15);
+    pointer-events:none;
+}
 
-        const duration =
-            2.5 + Math.random() * 3;
+.open-content{
+    position:relative;
+    z-index:3;
+    animation:float 3s ease-in-out infinite;
+}
 
-        flower.style.animation =
-            `flowerFall ${duration}s linear forwards`;
+.flower-big{
+    font-size:85px;
+    margin-bottom:20px;
+    filter:drop-shadow(0 0 25px #ffb4d9);
+}
 
-        document.body.appendChild(flower);
+.open-small{
+    color:#e9bfd7;
+    font-family:Arial,sans-serif;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:15px;
+}
 
-        setTimeout(() => {
-            flower.remove();
-        }, duration * 1000);
+.open-title{
+    font-size:clamp(30px,8vw,48px);
+    margin-bottom:12px;
+}
+
+.open-sub{
+    color:#d9b6ce;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.open-btn{
+    border:1px solid #ffffff55;
+    background:linear-gradient(135deg,#fff,#ffafd5);
+    color:#38172e;
+
+    padding:16px 45px;
+    border-radius:50px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 30px #ff9dcc55,
+        0 10px 30px #0005;
+
+    transition:.4s;
+}
+
+.open-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 50px #ff9dcc88;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
     }
 
-    /* Extra second wave */
-    setTimeout(() => {
-
-        for(let i = 0; i < 35; i++){
-
-            const flower = document.createElement("div");
-
-            const flowers = [
-                "🌸","🌷","🌺","🌼","🌹"
-            ];
-
-            flower.innerHTML =
-                flowers[Math.floor(Math.random() * flowers.length)];
-
-            flower.style.position = "fixed";
-            flower.style.left = Math.random() * 100 + "vw";
-            flower.style.top = "-40px";
-            flower.style.fontSize =
-                (18 + Math.random() * 25) + "px";
-
-            flower.style.zIndex = "10000";
-            flower.style.pointerEvents = "none";
-
-            const duration =
-                2 + Math.random() * 2.5;
-
-            flower.style.animation =
-                `flowerFall ${duration}s linear forwards`;
-
-            document.body.appendChild(flower);
-
-            setTimeout(() => {
-                flower.remove();
-            }, duration * 1000);
-
-        }
-
-    }, 700);
-
+    50%{
+        transform:translateY(-12px);
+    }
 }
 
 
-/* FLOWER FALL ANIMATION */
+/* ================= BACKGROUND FLOWERS ================= */
 
-const style = document.createElement("style");
+.flower{
+    position:fixed;
+    z-index:1;
+    pointer-events:none;
+    opacity:.5;
 
-style.innerHTML = `
+    animation:sway 5s ease-in-out infinite;
+}
 
-@keyframes flowerFall{
+.f1{
+    top:5%;
+    left:4%;
+    font-size:42px;
+}
+
+.f2{
+    top:12%;
+    right:5%;
+    font-size:35px;
+    animation-delay:1s;
+}
+
+.f3{
+    top:48%;
+    left:2%;
+    font-size:32px;
+    animation-delay:2s;
+}
+
+.f4{
+    top:70%;
+    right:3%;
+    font-size:40px;
+    animation-delay:1.5s;
+}
+
+.f5{
+    bottom:4%;
+    left:7%;
+    font-size:35px;
+}
+
+@keyframes sway{
+
+    0%,100%{
+        transform:rotate(-5deg) translateY(0);
+    }
+
+    50%{
+        transform:rotate(7deg) translateY(-10px);
+    }
+}
+
+
+/* ================= MAIN ================= */
+
+.main{
+    position:relative;
+    z-index:2;
+
+    min-height:100vh;
+
+    padding:70px 15px;
+
+    background:
+        radial-gradient(circle at 15% 15%,#8e376844,transparent 28%),
+        radial-gradient(circle at 85% 75%,#c04c8540,transparent 30%),
+        linear-gradient(145deg,#100813,#241025,#120914);
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+
+/* ================= HERO ================= */
+
+.hero-flower{
+    font-size:60px;
+    margin-bottom:15px;
+
+    filter:drop-shadow(0 0 18px #ffafd6);
+}
+
+.label{
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+    letter-spacing:5px;
+
+    color:#e6bcd5;
+
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:clamp(48px,12vw,90px);
+
+    line-height:.95;
+
+    margin-bottom:18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffc4df,
+            #fff,
+            #ffafd7
+        );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    text-shadow:0 0 30px #ff9dcc33;
+}
+
+.name{
+    font-style:italic;
+}
+
+.tagline{
+    font-family:Arial,sans-serif;
+
+    color:#e6ccdc;
+
+    font-size:16px;
+
+    line-height:1.7;
+}
+
+.ornament{
+    margin:28px auto;
+
+    color:#ffafd5;
+
+    font-size:22px;
+
+    letter-spacing:8px;
+}
+
+
+/* ================= LETTER ================= */
+
+.letter{
+
+    position:relative;
+
+    max-width:700px;
+
+    margin:0 auto;
+
+    padding:35px 28px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff12,
+            #ffffff06
+        );
+
+    border:1px solid #ffffff1e;
+
+    box-shadow:
+        0 25px 70px #0008,
+        inset 0 0 40px #ffffff04;
+
+    backdrop-filter:blur(15px);
+}
+
+.letter::before{
+    content:"🌸";
+
+    position:absolute;
+
+    top:-18px;
+    left:25px;
+
+    font-size:30px;
+}
+
+.letter::after{
+    content:"🌷";
+
+    position:absolute;
+
+    bottom:-18px;
+    right:25px;
+
+    font-size:30px;
+}
+
+.letter-title{
+
+    font-size:27px;
+
+    color:#ffd5e7;
+
+    margin-bottom:20px;
+}
+
+.letter p{
+
+    font-family:Arial,sans-serif;
+
+    color:#eadce5;
+
+    font-size:16px;
+
+    line-height:2;
+}
+
+.highlight{
+    color:#ffb5d8;
+    font-weight:bold;
+}
+
+
+/* ================= PHOTOS ================= */
+
+.section-title{
+
+    margin-top:65px;
+
+    margin-bottom:10px;
+
+    font-size:29px;
+
+    color:#ffe0ed;
+}
+
+.section-sub{
+
+    font-family:Arial,sans-serif;
+
+    color:#bfa7b9;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+}
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.photo-card{
+
+    position:relative;
+
+    aspect-ratio:4/5;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    padding:5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff55,
+            #ffafd544,
+            #ffffff10
+        );
+
+    box-shadow:
+        0 15px 35px #0009;
+
+    transition:.5s ease;
+}
+
+.photo-card:nth-child(2),
+.photo-card:nth-child(5){
+
+    transform:translateY(25px);
+}
+
+.photo-card:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.035);
+}
+
+.photo-card:nth-child(2):hover,
+.photo-card:nth-child(5):hover{
+
+    transform:
+        translateY(18px)
+        scale(1.035);
+}
+
+.photo-card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:19px;
+
+    transition:.6s ease;
+}
+
+.photo-card:hover img{
+
+    transform:scale(1.08);
+}
+
+.photo-card span{
+
+    position:absolute;
+
+    bottom:12px;
+    right:12px;
+
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#180b16bb;
+
+    backdrop-filter:blur(5px);
+}
+
+
+/* ================= FINAL ================= */
+
+.final{
+
+    margin-top:80px;
+
+    padding:45px 20px;
+}
+
+.final-flower{
+
+    font-size:45px;
+
+    margin-bottom:18px;
+}
+
+.final h2{
+
+    font-size:
+        clamp(30px,7vw,48px);
+
+    color:#ffd5e7;
+
+    margin-bottom:18px;
+}
+
+.final p{
+
+    max-width:600px;
+
+    margin:auto;
+
+    font-family:Arial,sans-serif;
+
+    color:#d7c4d1;
+
+    line-height:1.9;
+
+    font-size:15px;
+}
+
+.signature{
+
+    margin-top:28px;
+
+    color:#ffafd5;
+
+    font-style:italic;
+
+    font-size:20px;
+}
+
+.footer{
+
+    margin-top:35px;
+
+    color:#806b7c;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+}
+
+
+/* ================= FLOWER RAIN ================= */
+
+.rain-flower{
+
+    position:fixed;
+
+    top:-60px;
+
+    z-index:10000;
+
+    pointer-events:none;
+
+    animation:
+        flowerRain
+        linear
+        forwards;
+}
+
+@keyframes flowerRain{
 
     0%{
+
         transform:
-            translateY(-50px)
+            translateY(-60px)
             rotate(0deg)
-            scale(.7);
+            scale(.6);
 
         opacity:0;
     }
@@ -110,26 +563,497 @@ style.innerHTML = `
     }
 
     50%{
+
         transform:
             translateY(50vh)
-            translateX(30px)
+            translateX(40px)
             rotate(180deg)
             scale(1);
     }
 
     100%{
+
         transform:
             translateY(110vh)
-            translateX(-40px)
+            translateX(-50px)
             rotate(420deg)
             scale(.8);
 
-        opacity:.15;
+        opacity:.1;
     }
 }
 
-`;
 
-document.head.appendChild(style);
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .main{
+        padding:55px 12px;
+    }
+
+    .gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .photo-card{
+
+        border-radius:18px;
+    }
+
+    .photo-card:nth-child(2),
+    .photo-card:nth-child(5){
+
+        transform:none;
+    }
+
+    .photo-card:nth-child(2):hover,
+    .photo-card:nth-child(5):hover{
+
+        transform:scale(1.035);
+    }
+
+    .letter{
+
+        padding:28px 20px;
+    }
+
+    .letter p{
+
+        font-size:14px;
+
+        line-height:1.9;
+    }
+
+    .flower-big{
+        font-size:70px;
+    }
+
+    .hero-flower{
+        font-size:50px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= OPEN SCREEN ================= -->
+
+<div class="open-screen" id="openScreen">
+
+    <div class="open-content">
+
+        <div class="flower-big">
+            🌸
+        </div>
+
+        <div class="open-small">
+            A LITTLE SURPRISE
+        </div>
+
+        <div class="open-title">
+            Something Special For You
+        </div>
+
+        <div class="open-sub">
+            There's something waiting inside... ✨
+        </div>
+
+        <button
+            class="open-btn"
+            onclick="openBirthday()">
+
+            OPEN THE SURPRISE 💌
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= BACKGROUND FLOWERS ================= -->
+
+<div class="flower f1">🌸</div>
+<div class="flower f2">🌷</div>
+<div class="flower f3">🌼</div>
+<div class="flower f4">🌺</div>
+<div class="flower f5">🌸</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<div class="container">
+
+
+    <div class="hero-flower">
+        🌸 ✨ 🌸
+    </div>
+
+
+    <div class="label">
+        A SPECIAL DAY
+    </div>
+
+
+    <h1>
+
+        Happy Birthday<br>
+
+        <span class="name">
+            Muskan
+        </span>
+
+        💗
+
+    </h1>
+
+
+    <div class="tagline">
+
+        Today is not just another day...<br>
+
+        it's a day worth celebrating. 🌷
+
+    </div>
+
+
+    <div class="ornament">
+        ❀ · ✦ · ❀
+    </div>
+
+
+    <!-- ================= LETTER ================= -->
+
+    <div class="letter">
+
+        <div class="letter-title">
+
+            A Little Birthday Note 🌸
+
+        </div>
+
+
+        <p>
+
+            Some people make ordinary moments
+            feel a little more
+            <span class="highlight">
+                beautiful
+            </span>,
+
+            and today is the perfect day
+            to celebrate one of those people.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            Muskan, I hope this new year of your life
+            brings you countless smiles,
+            peaceful moments,
+            beautiful memories
+            and everything that makes your heart happy. ✨
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            Keep smiling,
+            keep growing
+            and keep being
+            <span class="highlight">
+                uniquely you
+            </span>.
+
+            You deserve a day filled with happiness,
+            flowers and wonderful memories. 🌷
+
+        </p>
+
+    </div>
+
+
+    <!-- ================= MEMORIES ================= -->
+
+    <div class="section-title">
+
+        Memories 🌸
+
+    </div>
+
+
+    <div class="section-sub">
+
+        A few beautiful moments worth keeping forever ✨
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div class="photo-card">
+
+            <img
+                src="photo1.jpg"
+                alt="Memory 1">
+
+            <span>💗</span>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="photo2.jpg"
+                alt="Memory 2">
+
+            <span>🌸</span>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="photo3.jpg"
+                alt="Memory 3">
+
+            <span>✨</span>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="photo4.jpg"
+                alt="Memory 4">
+
+            <span>💕</span>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="photo5.jpg"
+                alt="Memory 5">
+
+            <span>🌷</span>
+
+        </div>
+
+
+        <div class="photo-card">
+
+            <img
+                src="photo6.jpg"
+                alt="Memory 6">
+
+            <span>💖</span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================= FINAL ================= -->
+
+    <div class="final">
+
+
+        <div class="final-flower">
+
+            🌸 🌷 🌸
+
+        </div>
+
+
+        <h2>
+
+            Once Again,<br>
+
+            Happy Birthday Muskan! 🎂
+
+        </h2>
+
+
+        <p>
+
+            May the coming year be full of new memories,
+            unexpected happiness,
+            beautiful moments
+            and plenty of reasons to smile.
+
+        </p>
+
+
+        <div class="signature">
+
+            With lots of good wishes 💗
+
+        </div>
+
+
+        <div class="footer">
+
+            MADE WITH CARE • FOR MUSKAN
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function openBirthday(){
+
+    /* Hide opening screen */
+
+    document
+        .getElementById("openScreen")
+        .classList
+        .add("hide");
+
+
+    /* FLOWER RAIN */
+
+    const flowers = [
+        "🌸",
+        "🌷",
+        "🌺",
+        "🌼",
+        "🌹",
+        "💮"
+    ];
+
+
+    /* First big wave */
+
+    for(let i = 0; i < 100; i++){
+
+        createFlower(
+            flowers,
+            i * 25
+        );
+
+    }
+
+
+    /* Second wave */
+
+    setTimeout(function(){
+
+        for(let i = 0; i < 50; i++){
+
+            createFlower(
+                flowers,
+                i * 20
+            );
+
+        }
+
+    },700);
+
+
+    /* Third small wave */
+
+    setTimeout(function(){
+
+        for(let i = 0; i < 30; i++){
+
+            createFlower(
+                flowers,
+                i * 30
+            );
+
+        }
+
+    },1400);
+
+}
+
+
+function createFlower(flowers,delay){
+
+    const flower =
+        document.createElement("div");
+
+
+    flower.className =
+        "rain-flower";
+
+
+    flower.innerHTML =
+        flowers[
+            Math.floor(
+                Math.random() * flowers.length
+            )
+        ];
+
+
+    flower.style.left =
+        Math.random() * 100 + "vw";
+
+
+    flower.style.fontSize =
+        (18 + Math.random() * 30) + "px";
+
+
+    const duration =
+        2.5 + Math.random() * 3;
+
+
+    flower.style.animationDuration =
+        duration + "s";
+
+
+    flower.style.animationDelay =
+        delay + "ms";
+
+
+    document.body.appendChild(flower);
+
+
+    setTimeout(function(){
+
+        flower.remove();
+
+    },duration * 1000 + delay + 100);
+
+}
 
 </script>
+
+</body>
+</html>
