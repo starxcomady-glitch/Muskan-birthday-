@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Muskan 🌸</title>
+<title>Happy Birthday Muskan 💗</title>
 
 <style>
 *{
@@ -18,1039 +18,497 @@ html{
 }
 
 body{
-    background:#100813;
-    color:white;
-    font-family:Georgia,serif;
+    font-family:Georgia, serif;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255,190,210,.35), transparent 30%),
+        radial-gradient(circle at 80% 90%, rgba(190,210,255,.3), transparent 30%),
+        linear-gradient(135deg,#fff7fa,#f8f3ff,#fff);
+    color:#392936;
     overflow-x:hidden;
 }
 
-/* ================= OPEN SCREEN ================= */
+/* OPEN SCREEN */
 
-.open-screen{
+#intro{
     position:fixed;
     inset:0;
-    z-index:9999;
+    z-index:1000;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:20px;
-
     background:
-        radial-gradient(circle at 50% 35%,#7d426b 0%,#35182f 30%,#130913 75%);
-
-    transition:1.2s ease;
+        radial-gradient(circle at center,rgba(255,255,255,.95),rgba(255,225,237,.9)),
+        linear-gradient(135deg,#fff,#ffe5ef);
+    transition:1s ease;
 }
 
-.open-screen.hide{
-    opacity:0;
-    transform:scale(1.15);
-    pointer-events:none;
+.intro-box{
+    padding:40px 25px;
+    animation:fadeUp 1.5s ease;
 }
 
-.open-content{
-    position:relative;
-    z-index:3;
-    animation:float 3s ease-in-out infinite;
-}
-
-.flower-big{
-    font-size:85px;
-    margin-bottom:20px;
-    filter:drop-shadow(0 0 25px #ffb4d9);
-}
-
-.open-small{
-    color:#e9bfd7;
-    font-family:Arial,sans-serif;
-    letter-spacing:4px;
-    font-size:12px;
+.small{
+    font-size:14px;
+    letter-spacing:5px;
+    color:#a66a83;
     margin-bottom:15px;
 }
 
-.open-title{
-    font-size:clamp(30px,8vw,48px);
-    margin-bottom:12px;
-}
-
-.open-sub{
-    color:#d9b6ce;
-    font-family:Arial,sans-serif;
-    font-size:14px;
+.intro-title{
+    font-size:clamp(38px,10vw,75px);
+    color:#7d3f5b;
     margin-bottom:30px;
+    text-shadow:0 8px 30px rgba(125,63,91,.15);
 }
 
 .open-btn{
-    border:1px solid #ffffff55;
-    background:linear-gradient(135deg,#fff,#ffafd5);
-    color:#38172e;
-
-    padding:16px 45px;
+    border:0;
+    padding:17px 34px;
     border-radius:50px;
-
     font-size:16px;
-    font-weight:bold;
-
+    letter-spacing:2px;
+    color:white;
+    background:linear-gradient(135deg,#b76e8d,#7d3f5b);
+    box-shadow:0 15px 35px rgba(125,63,91,.3);
     cursor:pointer;
-
-    box-shadow:
-        0 0 30px #ff9dcc55,
-        0 10px 30px #0005;
-
-    transition:.4s;
+    transition:.35s;
 }
 
 .open-btn:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 50px #ff9dcc88;
+    transform:translateY(-4px) scale(1.04);
+    box-shadow:0 20px 45px rgba(125,63,91,.4);
 }
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
+/* MAIN */
 
-    50%{
-        transform:translateY(-12px);
-    }
+main{
+    display:none;
+    animation:pageIn 1.4s ease;
 }
 
-
-/* ================= BACKGROUND FLOWERS ================= */
-
-.flower{
-    position:fixed;
-    z-index:1;
-    pointer-events:none;
-    opacity:.5;
-
-    animation:sway 5s ease-in-out infinite;
-}
-
-.f1{
-    top:5%;
-    left:4%;
-    font-size:42px;
-}
-
-.f2{
-    top:12%;
-    right:5%;
-    font-size:35px;
-    animation-delay:1s;
-}
-
-.f3{
-    top:48%;
-    left:2%;
-    font-size:32px;
-    animation-delay:2s;
-}
-
-.f4{
-    top:70%;
-    right:3%;
-    font-size:40px;
-    animation-delay:1.5s;
-}
-
-.f5{
-    bottom:4%;
-    left:7%;
-    font-size:35px;
-}
-
-@keyframes sway{
-
-    0%,100%{
-        transform:rotate(-5deg) translateY(0);
-    }
-
-    50%{
-        transform:rotate(7deg) translateY(-10px);
-    }
-}
-
-
-/* ================= MAIN ================= */
-
-.main{
-    position:relative;
-    z-index:2;
-
+.hero{
     min-height:100vh;
-
-    padding:70px 15px;
-
-    background:
-        radial-gradient(circle at 15% 15%,#8e376844,transparent 28%),
-        radial-gradient(circle at 85% 75%,#c04c8540,transparent 30%),
-        linear-gradient(145deg,#100813,#241025,#120914);
-}
-
-.container{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-}
-
-
-/* ================= HERO ================= */
-
-.hero-flower{
-    font-size:60px;
-    margin-bottom:15px;
-
-    filter:drop-shadow(0 0 18px #ffafd6);
-}
-
-.label{
-    font-family:Arial,sans-serif;
-
-    font-size:11px;
-    letter-spacing:5px;
-
-    color:#e6bcd5;
-
-    margin-bottom:15px;
-}
-
-h1{
-    font-size:clamp(48px,12vw,90px);
-
-    line-height:.95;
-
-    margin-bottom:18px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ffc4df,
-            #fff,
-            #ffafd7
-        );
-
-    -webkit-background-clip:text;
-    color:transparent;
-
-    text-shadow:0 0 30px #ff9dcc33;
-}
-
-.name{
-    font-style:italic;
-}
-
-.tagline{
-    font-family:Arial,sans-serif;
-
-    color:#e6ccdc;
-
-    font-size:16px;
-
-    line-height:1.7;
-}
-
-.ornament{
-    margin:28px auto;
-
-    color:#ffafd5;
-
-    font-size:22px;
-
-    letter-spacing:8px;
-}
-
-
-/* ================= LETTER ================= */
-
-.letter{
-
-    position:relative;
-
-    max-width:700px;
-
-    margin:0 auto;
-
-    padding:35px 28px;
-
-    border-radius:30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff12,
-            #ffffff06
-        );
-
-    border:1px solid #ffffff1e;
-
-    box-shadow:
-        0 25px 70px #0008,
-        inset 0 0 40px #ffffff04;
-
-    backdrop-filter:blur(15px);
-}
-
-.letter::before{
-    content:"🌸";
-
-    position:absolute;
-
-    top:-18px;
-    left:25px;
-
-    font-size:30px;
-}
-
-.letter::after{
-    content:"🌷";
-
-    position:absolute;
-
-    bottom:-18px;
-    right:25px;
-
-    font-size:30px;
-}
-
-.letter-title{
-
-    font-size:27px;
-
-    color:#ffd5e7;
-
-    margin-bottom:20px;
-}
-
-.letter p{
-
-    font-family:Arial,sans-serif;
-
-    color:#eadce5;
-
-    font-size:16px;
-
-    line-height:2;
-}
-
-.highlight{
-    color:#ffb5d8;
-    font-weight:bold;
-}
-
-
-/* ================= PHOTOS ================= */
-
-.section-title{
-
-    margin-top:65px;
-
-    margin-bottom:10px;
-
-    font-size:29px;
-
-    color:#ffe0ed;
-}
-
-.section-sub{
-
-    font-family:Arial,sans-serif;
-
-    color:#bfa7b9;
-
-    font-size:13px;
-
-    margin-bottom:25px;
-}
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:15px;
-}
-
-.photo-card{
-
-    position:relative;
-
-    aspect-ratio:4/5;
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    padding:5px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff55,
-            #ffafd544,
-            #ffffff10
-        );
-
-    box-shadow:
-        0 15px 35px #0009;
-
-    transition:.5s ease;
-}
-
-.photo-card:nth-child(2),
-.photo-card:nth-child(5){
-
-    transform:translateY(25px);
-}
-
-.photo-card:hover{
-
-    transform:
-        translateY(-5px)
-        scale(1.035);
-}
-
-.photo-card:nth-child(2):hover,
-.photo-card:nth-child(5):hover{
-
-    transform:
-        translateY(18px)
-        scale(1.035);
-}
-
-.photo-card img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-    border-radius:19px;
-
-    transition:.6s ease;
-}
-
-.photo-card:hover img{
-
-    transform:scale(1.08);
-}
-
-.photo-card span{
-
-    position:absolute;
-
-    bottom:12px;
-    right:12px;
-
-    width:30px;
-    height:30px;
-
-    border-radius:50%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    background:#180b16bb;
-
-    backdrop-filter:blur(5px);
+    text-align:center;
+    padding:70px 20px;
 }
 
+.hero-content{
+    max-width:850px;
+}
 
-/* ================= FINAL ================= */
+.eyebrow{
+    font-size:13px;
+    letter-spacing:5px;
+    color:#a66a83;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:clamp(48px,12vw,100px);
+    line-height:1;
+    color:#713951;
+    margin-bottom:25px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.9;
+    color:#725b67;
+}
+
+/* MESSAGE */
+
+.message{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.card{
+    max-width:760px;
+    margin:auto;
+    padding:45px 30px;
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:30px;
+    background:rgba(255,255,255,.48);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:
+        0 25px 70px rgba(100,60,80,.12),
+        inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.card h2{
+    color:#7d3f5b;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.card p{
+    line-height:2;
+    font-size:17px;
+    color:#705966;
+}
+
+/* PREMIUM PHOTOS */
+
+.gallery-section{
+    padding:90px 18px;
+    text-align:center;
+}
+
+.section-label{
+    font-size:12px;
+    letter-spacing:5px;
+    color:#a66a83;
+    margin-bottom:12px;
+}
+
+.gallery-title{
+    font-size:42px;
+    color:#713951;
+    margin-bottom:50px;
+}
+
+.gallery{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.photo-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    padding:7px;
+    background:rgba(255,255,255,.65);
+    box-shadow:
+        0 18px 45px rgba(75,45,60,.14),
+        inset 0 0 0 1px rgba(255,255,255,.7);
+    transition:.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.photo-card:nth-child(1),
+.photo-card:nth-child(4){
+    transform:translateY(-15px);
+}
+
+.photo-card:hover{
+    transform:translateY(-10px) scale(1.025);
+    box-shadow:0 28px 65px rgba(75,45,60,.22);
+}
+
+.photo-card img{
+    display:block;
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.7s ease;
+}
+
+.photo-card:hover img{
+    transform:scale(1.06);
+}
+
+/* FINAL */
 
 .final{
-
-    margin-top:80px;
-
-    padding:45px 20px;
+    min-height:65vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
 }
 
-.final-flower{
-
-    font-size:45px;
-
-    margin-bottom:18px;
+.final-box{
+    max-width:700px;
 }
 
 .final h2{
-
-    font-size:
-        clamp(30px,7vw,48px);
-
-    color:#ffd5e7;
-
-    margin-bottom:18px;
+    font-size:clamp(38px,9vw,65px);
+    color:#713951;
+    margin-bottom:20px;
 }
 
 .final p{
-
-    max-width:600px;
-
-    margin:auto;
-
-    font-family:Arial,sans-serif;
-
-    color:#d7c4d1;
-
+    font-size:18px;
     line-height:1.9;
-
-    font-size:15px;
+    color:#705966;
 }
 
-.signature{
-
-    margin-top:28px;
-
-    color:#ffafd5;
-
-    font-style:italic;
-
-    font-size:20px;
+footer{
+    text-align:center;
+    padding:30px;
+    color:#a68191;
+    font-size:13px;
 }
 
-.footer{
+/* FLOWERS */
 
-    margin-top:35px;
-
-    color:#806b7c;
-
-    font-family:Arial,sans-serif;
-
-    font-size:11px;
-
-    letter-spacing:2px;
-}
-
-
-/* ================= FLOWER RAIN ================= */
-
-.rain-flower{
-
+.flower{
     position:fixed;
-
-    top:-60px;
-
-    z-index:10000;
-
+    top:-50px;
+    z-index:2000;
     pointer-events:none;
-
-    animation:
-        flowerRain
-        linear
-        forwards;
+    animation:fall linear forwards;
+    filter:drop-shadow(0 4px 5px rgba(0,0,0,.08));
 }
 
-@keyframes flowerRain{
-
+@keyframes fall{
     0%{
-
-        transform:
-            translateY(-60px)
-            rotate(0deg)
-            scale(.6);
-
+        transform:translateY(-50px) rotate(0deg);
         opacity:0;
     }
-
     10%{
         opacity:1;
     }
-
-    50%{
-
-        transform:
-            translateY(50vh)
-            translateX(40px)
-            rotate(180deg)
-            scale(1);
-    }
-
     100%{
-
-        transform:
-            translateY(110vh)
-            translateX(-50px)
-            rotate(420deg)
-            scale(.8);
-
-        opacity:.1;
+        transform:translateY(110vh) rotate(500deg);
+        opacity:.9;
     }
 }
 
-
-/* ================= MOBILE ================= */
-
-@media(max-width:600px){
-
-    .main{
-        padding:55px 12px;
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
     }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
 
     .gallery{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:10px;
+        grid-template-columns:1fr;
+        gap:18px;
+        max-width:430px;
     }
 
-    .photo-card{
-
-        border-radius:18px;
-    }
-
-    .photo-card:nth-child(2),
-    .photo-card:nth-child(5){
-
+    .photo-card:nth-child(1),
+    .photo-card:nth-child(4){
         transform:none;
     }
 
-    .photo-card:nth-child(2):hover,
-    .photo-card:nth-child(5):hover{
-
-        transform:scale(1.035);
+    .gallery-title{
+        font-size:34px;
     }
 
-    .letter{
-
-        padding:28px 20px;
+    .card{
+        padding:35px 22px;
     }
 
-    .letter p{
-
-        font-size:14px;
-
-        line-height:1.9;
-    }
-
-    .flower-big{
-        font-size:70px;
-    }
-
-    .hero-flower{
-        font-size:50px;
+    .hero p{
+        font-size:16px;
     }
 }
 </style>
 </head>
 
-
 <body>
 
+<!-- OPEN SCREEN -->
 
-<!-- ================= OPEN SCREEN ================= -->
+<section id="intro">
+    <div class="intro-box">
+        <div class="small">A LITTLE SURPRISE FOR</div>
 
-<div class="open-screen" id="openScreen">
-
-    <div class="open-content">
-
-        <div class="flower-big">
-            🌸
+        <div class="intro-title">
+            Muskan 💗
         </div>
 
-        <div class="open-small">
-            A LITTLE SURPRISE
-        </div>
-
-        <div class="open-title">
-            Something Special For You
-        </div>
-
-        <div class="open-sub">
-            There's something waiting inside... ✨
-        </div>
-
-        <button
-            class="open-btn"
-            onclick="openBirthday()">
-
-            OPEN THE SURPRISE 💌
-
+        <button class="open-btn" onclick="openBirthday()">
+            OPEN THE SURPRISE ✨
         </button>
-
     </div>
-
-</div>
-
-
-<!-- ================= BACKGROUND FLOWERS ================= -->
-
-<div class="flower f1">🌸</div>
-<div class="flower f2">🌷</div>
-<div class="flower f3">🌼</div>
-<div class="flower f4">🌺</div>
-<div class="flower f5">🌸</div>
+</section>
 
 
-<!-- ================= MAIN ================= -->
+<!-- BIRTHDAY PAGE -->
 
-<main class="main">
+<main id="birthday">
 
-<div class="container">
+    <section class="hero">
+        <div class="hero-content">
 
+            <div class="eyebrow">
+                TODAY IS YOUR SPECIAL DAY
+            </div>
 
-    <div class="hero-flower">
-        🌸 ✨ 🌸
-    </div>
+            <h1>
+                Happy Birthday<br>
+                Muskan 💗
+            </h1>
 
+            <p>
+                May your day be filled with beautiful moments,
+                genuine smiles and memories that stay with you forever.
+            </p>
 
-    <div class="label">
-        A SPECIAL DAY
-    </div>
-
-
-    <h1>
-
-        Happy Birthday<br>
-
-        <span class="name">
-            Muskan
-        </span>
-
-        💗
-
-    </h1>
+        </div>
+    </section>
 
 
-    <div class="tagline">
+    <section class="message">
 
-        Today is not just another day...<br>
+        <div class="card">
 
-        it's a day worth celebrating. 🌷
+            <h2>For You ✨</h2>
 
-    </div>
-
-
-    <div class="ornament">
-        ❀ · ✦ · ❀
-    </div>
-
-
-    <!-- ================= LETTER ================= -->
-
-    <div class="letter">
-
-        <div class="letter-title">
-
-            A Little Birthday Note 🌸
+            <p>
+                Some people make ordinary moments feel special.
+                I hope this little surprise brings a smile to your face
+                and makes your birthday a little more memorable.
+                <br><br>
+                Keep smiling, keep shining and enjoy your special day. 💗
+            </p>
 
         </div>
 
-
-        <p>
-
-            Some people make ordinary moments
-            feel a little more
-            <span class="highlight">
-                beautiful
-            </span>,
-
-            and today is the perfect day
-            to celebrate one of those people.
-
-        </p>
+    </section>
 
 
-        <br>
+    <!-- PREMIUM PHOTO SECTION -->
 
+    <section class="gallery-section">
 
-        <p>
-
-            Muskan, I hope this new year of your life
-            brings you countless smiles,
-            peaceful moments,
-            beautiful memories
-            and everything that makes your heart happy. ✨
-
-        </p>
-
-
-        <br>
-
-
-        <p>
-
-            Keep smiling,
-            keep growing
-            and keep being
-            <span class="highlight">
-                uniquely you
-            </span>.
-
-            You deserve a day filled with happiness,
-            flowers and wonderful memories. 🌷
-
-        </p>
-
-    </div>
-
-
-    <!-- ================= MEMORIES ================= -->
-
-    <div class="section-title">
-
-        Memories 🌸
-
-    </div>
-
-
-    <div class="section-sub">
-
-        A few beautiful moments worth keeping forever ✨
-
-    </div>
-
-
-    <div class="gallery">
-
-
-        <div class="photo-card">
-
-            <img
-                src="photo1.jpg"
-                alt="Memory 1">
-
-            <span>💗</span>
-
+        <div class="section-label">
+            BEAUTIFUL MEMORIES
         </div>
 
-
-        <div class="photo-card">
-
-            <img
-                src="photo2.jpg"
-                alt="Memory 2">
-
-            <span>🌸</span>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="photo3.jpg"
-                alt="Memory 3">
-
-            <span>✨</span>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="photo4.jpg"
-                alt="Memory 4">
-
-            <span>💕</span>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="photo5.jpg"
-                alt="Memory 5">
-
-            <span>🌷</span>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="photo6.jpg"
-                alt="Memory 6">
-
-            <span>💖</span>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- ================= FINAL ================= -->
-
-    <div class="final">
-
-
-        <div class="final-flower">
-
-            🌸 🌷 🌸
-
-        </div>
-
-
-        <h2>
-
-            Once Again,<br>
-
-            Happy Birthday Muskan! 🎂
-
+        <h2 class="gallery-title">
+            Little Moments ✨
         </h2>
 
+        <div class="gallery">
 
-        <p>
+            <div class="photo-card">
+                <img src="./photo1.jpg" alt="Memory 1">
+            </div>
 
-            May the coming year be full of new memories,
-            unexpected happiness,
-            beautiful moments
-            and plenty of reasons to smile.
+            <div class="photo-card">
+                <img src="./photo2.jpg" alt="Memory 2">
+            </div>
 
-        </p>
+            <div class="photo-card">
+                <img src="./photo3.jpg" alt="Memory 3">
+            </div>
 
+            <div class="photo-card">
+                <img src="./photo4.jpg" alt="Memory 4">
+            </div>
 
-        <div class="signature">
+            <div class="photo-card">
+                <img src="./photo5.jpg" alt="Memory 5">
+            </div>
 
-            With lots of good wishes 💗
+            <div class="photo-card">
+                <img src="./photo6.jpg" alt="Memory 6">
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="footer">
 
-            MADE WITH CARE • FOR MUSKAN
+    <section class="final">
+
+        <div class="final-box">
+
+            <h2>
+                Stay Happy. Stay Amazing. 💗
+            </h2>
+
+            <p>
+                Wishing you a beautiful birthday
+                and an even more beautiful year ahead.
+            </p>
 
         </div>
 
+    </section>
 
-    </div>
 
-
-</div>
+    <footer>
+        Made with 💗 specially for Muskan
+    </footer>
 
 </main>
 
-
-<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
 function openBirthday(){
 
-    /* Hide opening screen */
-
-    document
-        .getElementById("openScreen")
-        .classList
-        .add("hide");
-
-
-    /* FLOWER RAIN */
-
-    const flowers = [
-        "🌸",
-        "🌷",
-        "🌺",
-        "🌼",
-        "🌹",
-        "💮"
-    ];
-
-
-    /* First big wave */
-
-    for(let i = 0; i < 100; i++){
-
-        createFlower(
-            flowers,
-            i * 25
-        );
-
-    }
-
-
-    /* Second wave */
+    document.getElementById("intro").style.opacity="0";
 
     setTimeout(function(){
 
-        for(let i = 0; i < 50; i++){
+        document.getElementById("intro").style.display="none";
+        document.getElementById("birthday").style.display="block";
 
-            createFlower(
-                flowers,
-                i * 20
-            );
+        flowerRain();
 
-        }
-
-    },700);
-
-
-    /* Third small wave */
-
-    setTimeout(function(){
-
-        for(let i = 0; i < 30; i++){
-
-            createFlower(
-                flowers,
-                i * 30
-            );
-
-        }
-
-    },1400);
-
+    },800);
 }
 
 
-function createFlower(flowers,delay){
+function flowerRain(){
 
-    const flower =
-        document.createElement("div");
+    const flowers=["🌸","🌷","🌹","🌺","💮"];
 
+    for(let i=0;i<45;i++){
 
-    flower.className =
-        "rain-flower";
+        setTimeout(function(){
 
+            const flower=document.createElement("div");
 
-    flower.innerHTML =
-        flowers[
-            Math.floor(
-                Math.random() * flowers.length
-            )
-        ];
+            flower.className="flower";
 
+            flower.innerHTML=
+                flowers[Math.floor(Math.random()*flowers.length)];
 
-    flower.style.left =
-        Math.random() * 100 + "vw";
+            flower.style.left=Math.random()*100+"vw";
 
+            flower.style.fontSize=
+                (16+Math.random()*18)+"px";
 
-    flower.style.fontSize =
-        (18 + Math.random() * 30) + "px";
+            flower.style.animationDuration=
+                (4+Math.random()*5)+"s";
 
+            document.body.appendChild(flower);
 
-    const duration =
-        2.5 + Math.random() * 3;
+            setTimeout(function(){
+                flower.remove();
+            },9000);
 
+        },i*80);
 
-    flower.style.animationDuration =
-        duration + "s";
-
-
-    flower.style.animationDelay =
-        delay + "ms";
-
-
-    document.body.appendChild(flower);
-
-
-    setTimeout(function(){
-
-        flower.remove();
-
-    },duration * 1000 + delay + 100);
-
+    }
 }
 
 </script>
