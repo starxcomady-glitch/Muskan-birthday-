@@ -13,40 +13,237 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    min-height:100vh;
     font-family:Georgia,serif;
-    background:
-        radial-gradient(circle at top,#ffb6d9 0%,transparent 35%),
-        linear-gradient(135deg,#160b22,#35113d,#180b25);
+    background:#120817;
     color:white;
     overflow-x:hidden;
 }
 
-/* Floating hearts */
+/* ================= OPEN SCREEN ================= */
+
+.open-screen{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    background:
+        radial-gradient(circle at center,#6b245d,#24102d 55%,#100712);
+    transition:1s ease;
+}
+
+.open-screen.hide{
+    opacity:0;
+    visibility:hidden;
+    transform:scale(1.15);
+}
+
+.open-box{
+    animation:openFloat 3s ease-in-out infinite;
+}
+
+@keyframes openFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+.gift{
+    font-size:90px;
+    margin-bottom:20px;
+    filter:drop-shadow(0 10px 25px #000);
+}
+
+.open-title{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.open-sub{
+    color:#e9bddb;
+    margin-bottom:30px;
+    font-family:Arial,sans-serif;
+}
+
+.open-btn{
+    border:0;
+    padding:16px 40px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(135deg,#fff,#ff9dcc);
+    color:#35132c;
+    box-shadow:0 0 30px rgba(255,150,210,.4);
+    transition:.3s;
+}
+
+.open-btn:hover{
+    transform:scale(1.07);
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    min-height:100vh;
+    padding:60px 15px;
+    background:
+        radial-gradient(circle at 20% 10%,#7a285e55,transparent 30%),
+        radial-gradient(circle at 80% 80%,#c3478950,transparent 30%),
+        linear-gradient(135deg,#120817,#2c102f,#14091b);
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+/* Heading */
+
+.cake{
+    font-size:70px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+}
+
+.small{
+    margin-top:15px;
+    color:#ffc9e5;
+    letter-spacing:4px;
+    font-size:13px;
+    font-family:Arial,sans-serif;
+}
+
+h1{
+    font-size:clamp(45px,10vw,80px);
+    line-height:1;
+    margin:12px 0;
+    background:linear-gradient(90deg,#fff,#ff9dcc,#fff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.name{
+    color:#ff9dcc;
+}
+
+.subtitle{
+    color:#f3cfe2;
+    font-size:19px;
+}
+
+.divider{
+    width:90px;
+    height:3px;
+    background:#ff9dcc;
+    border-radius:10px;
+    margin:28px auto;
+}
+
+/* Message */
+
+.message{
+    max-width:650px;
+    margin:auto;
+    padding:25px;
+    border-radius:25px;
+    background:#ffffff0d;
+    border:1px solid #ffffff1c;
+    backdrop-filter:blur(10px);
+    font-family:Arial,sans-serif;
+    color:#f8e8f2;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* ================= PHOTOS ================= */
+
+.memories-title{
+    margin-top:55px;
+    margin-bottom:20px;
+    font-size:27px;
+    color:#ffd4e9;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.photo-box{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    aspect-ratio:1/1;
+    border:2px solid #ffffff25;
+    box-shadow:0 12px 30px #0008;
+    background:#28152d;
+}
+
+.photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.5s ease;
+}
+
+.photo-box:hover .photo{
+    transform:scale(1.1);
+}
+
+.photo-box::after{
+    content:"💗";
+    position:absolute;
+    right:10px;
+    bottom:8px;
+    font-size:20px;
+    opacity:0;
+    transition:.3s;
+}
+
+.photo-box:hover::after{
+    opacity:1;
+}
+
+/* Bottom */
+
+.final{
+    margin-top:45px;
+    font-size:20px;
+    color:#ffd5e8;
+    line-height:1.7;
+}
+
+.footer{
+    margin-top:30px;
+    color:#a98ba3;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+}
+
+/* Hearts */
+
 .heart{
     position:fixed;
     bottom:-30px;
-    font-size:22px;
-    opacity:.7;
-    animation:float 7s linear infinite;
+    z-index:2;
     pointer-events:none;
-    z-index:0;
+    animation:heartFloat 8s linear infinite;
 }
 
-.h1{left:8%;animation-delay:0s}
-.h2{left:25%;animation-delay:2s}
-.h3{left:48%;animation-delay:4s}
-.h4{left:72%;animation-delay:1s}
-.h5{left:90%;animation-delay:3s}
-
-@keyframes float{
+@keyframes heartFloat{
     0%{
-        transform:translateY(0) rotate(0deg);
+        transform:translateY(0) rotate(0);
         opacity:0;
     }
     15%{opacity:.8}
@@ -56,211 +253,48 @@ body{
     }
 }
 
-/* Main */
-.container{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:25px 15px;
-    position:relative;
-    z-index:1;
-}
-
-.card{
-    width:min(92%,560px);
-    padding:42px 28px;
-    text-align:center;
-    border-radius:30px;
-    background:rgba(255,255,255,.10);
-    border:1px solid rgba(255,255,255,.22);
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.45),
-        inset 0 0 30px rgba(255,255,255,.04);
-    backdrop-filter:blur(15px);
-    animation:appear 1.2s ease;
-}
-
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(35px) scale(.95);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-}
-
-.cake{
-    font-size:75px;
-    margin-bottom:12px;
-    animation:bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
-}
-
-.small{
-    font-size:15px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:#ffd5e9;
-    margin-bottom:10px;
-}
-
-h1{
-    font-size:clamp(38px,10vw,62px);
-    line-height:1.05;
-    margin-bottom:12px;
-    background:linear-gradient(90deg,#fff,#ffb7dc,#fff);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.name{
-    color:#ff9ccc;
-}
-
-.subtitle{
-    font-size:18px;
-    color:#f9dbea;
-    margin-bottom:28px;
-}
-
-.line{
-    width:75px;
-    height:3px;
-    margin:0 auto 25px;
-    border-radius:10px;
-    background:#ff9ccc;
-}
-
-.message{
-    font-family:Arial,sans-serif;
-    font-size:16px;
-    line-height:1.8;
-    color:#f9eef5;
-    margin-bottom:28px;
-}
-
-/* Photos */
-.gallery-title{
-    margin-top:35px;
-    margin-bottom:18px;
-    font-size:24px;
-    color:#ffd8ea;
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-bottom:28px;
-}
-
-.photo{
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    border-radius:18px;
-    border:2px solid rgba(255,255,255,.25);
-    box-shadow:0 8px 25px rgba(0,0,0,.35);
-    transition:.35s ease;
-}
-
-.photo:hover{
-    transform:scale(1.04) rotate(1deg);
-    border-color:#ffafd4;
-}
-
-/* Button */
-button{
-    border:none;
-    padding:14px 28px;
-    border-radius:50px;
-    font-size:16px;
-    font-weight:bold;
-    color:#46132f;
-    background:linear-gradient(135deg,#fff,#ffacd5);
-    cursor:pointer;
-    box-shadow:0 8px 25px rgba(255,130,190,.3);
-    transition:.3s;
-}
-
-button:hover{
-    transform:translateY(-3px) scale(1.03);
-    box-shadow:0 12px 30px rgba(255,130,190,.45);
-}
-
-.surprise{
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    transition:all .7s ease;
-}
-
-.surprise.show{
-    max-height:300px;
-    opacity:1;
-    margin-top:25px;
-}
-
-.surprise p{
-    font-size:18px;
-    line-height:1.7;
-    color:#ffe3f0;
-}
-
-.footer{
-    margin-top:28px;
-    font-size:13px;
-    color:#cdaabd;
-    letter-spacing:1px;
-}
+.h1{left:8%;animation-delay:0s}
+.h2{left:25%;animation-delay:2s}
+.h3{left:50%;animation-delay:4s}
+.h4{left:72%;animation-delay:1s}
+.h5{left:90%;animation-delay:3s}
 
 /* Mobile */
-@media(max-width:480px){
 
-    .container{
-        padding:18px 10px;
+@media(max-width:600px){
+
+    .main{
+        padding:45px 12px;
     }
 
-    .card{
-        width:100%;
-        padding:35px 20px;
-        border-radius:25px;
+    .gift{
+        font-size:75px;
+    }
+
+    .open-title{
+        font-size:29px;
     }
 
     .cake{
-        font-size:65px;
-    }
-
-    h1{
-        font-size:42px;
-    }
-
-    .subtitle{
-        font-size:16px;
-    }
-
-    .message{
-        font-size:15px;
-        line-height:1.75;
+        font-size:60px;
     }
 
     .gallery{
-        gap:9px;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
-    .photo{
-        border-radius:15px;
+    .photo-box{
+        border-radius:17px;
     }
 
-    button{
-        width:100%;
+    .message{
+        padding:20px;
+        font-size:15px;
+    }
+
+    .final{
+        font-size:18px;
     }
 }
 </style>
@@ -268,83 +302,144 @@ button:hover{
 
 <body>
 
+<!-- OPEN SCREEN -->
+
+<div class="open-screen" id="openScreen">
+
+    <div class="open-box">
+
+        <div class="gift">🎁</div>
+
+        <div class="open-title">
+            Something Special For You 💗
+        </div>
+
+        <div class="open-sub">
+            Tap the button to open your surprise ✨
+        </div>
+
+        <button class="open-btn" onclick="openBirthday()">
+            OPEN 💌
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FLOATING HEARTS -->
+
 <div class="heart h1">💗</div>
 <div class="heart h2">💖</div>
 <div class="heart h3">💕</div>
 <div class="heart h4">💗</div>
 <div class="heart h5">💞</div>
 
+
+<!-- MAIN BIRTHDAY -->
+
+<main class="main">
+
 <div class="container">
-<div class="card">
 
     <div class="cake">🎂</div>
 
-    <div class="small">A Special Day For</div>
+    <div class="small">
+        TODAY IS YOUR SPECIAL DAY
+    </div>
 
     <h1>
         Happy Birthday<br>
         <span class="name">Muskan 💗</span>
     </h1>
 
-    <div class="line"></div>
-
     <p class="subtitle">
-        Wishing you a beautiful day ✨
+        Wishing you happiness, smiles & beautiful memories ✨
     </p>
 
-    <p class="message">
-        May your birthday be filled with happiness,
-        beautiful memories and lots of reasons to smile.
-        Keep shining and keep being the amazing person you are. 💕
-    </p>
+    <div class="divider"></div>
 
 
-    <!-- PHOTO GALLERY -->
+    <div class="message">
 
-    <div class="gallery-title">
-        Some Beautiful Memories 📸
+        May this special day bring you
+        lots of happiness, beautiful memories
+        and countless reasons to smile. 🌸
+
+        <br><br>
+
+        Keep shining, keep smiling,
+        and always stay the amazing person you are. 💕✨
+
+    </div>
+
+
+    <!-- MEMORIES -->
+
+    <div class="memories-title">
+        ✨ Beautiful Memories ✨
     </div>
 
     <div class="gallery">
 
-        <img src="photo1.jpg" class="photo" alt="Memory 1">
+        <div class="photo-box">
+            <img src="photo1.jpg" class="photo">
+        </div>
 
-        <img src="photo2.jpg" class="photo" alt="Memory 2">
+        <div class="photo-box">
+            <img src="photo2.jpg" class="photo">
+        </div>
 
-        <img src="photo3.jpg" class="photo" alt="Memory 3">
+        <div class="photo-box">
+            <img src="photo3.jpg" class="photo">
+        </div>
 
-        <img src="photo4.jpg" class="photo" alt="Memory 4">
+        <div class="photo-box">
+            <img src="photo4.jpg" class="photo">
+        </div>
 
-        <img src="photo5.jpg" class="photo" alt="Memory 5">
+        <div class="photo-box">
+            <img src="photo5.jpg" class="photo">
+        </div>
 
-        <img src="photo6.jpg" class="photo" alt="Memory 6">
+        <div class="photo-box">
+            <img src="photo6.jpg" class="photo">
+        </div>
 
     </div>
 
 
-    <button onclick="showSurprise()">
-        💌 One More Thing
-    </button>
+    <div class="final">
 
-    <div class="surprise" id="surprise">
-        <p>
-            You deserve all the happiness in the world. 🌸<br>
-            Keep smiling, keep shining,<br>
-            and have the most amazing birthday! 💗✨
-        </p>
+        Once again...<br>
+
+        <strong>Happy Birthday Muskan! 🎂💗</strong>
+
+        <br>
+
+        May your day be as beautiful as your smile. ✨
+
     </div>
+
 
     <div class="footer">
-        Made with 💗 just for you
+        Made with 💗
     </div>
 
 </div>
-</div>
+
+</main>
+
 
 <script>
 
-function showSurprise(){
-    document.getElementById("surprise").classList.toggle("show");
+function openBirthday(){
+
+    document.getElementById("openScreen")
+    .classList.add("hide");
+
+    document.body.style.overflowY = "auto";
+
 }
 
 </script>
