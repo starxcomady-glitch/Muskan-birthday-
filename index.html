@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Muskan 💗</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,serif;
+    background:linear-gradient(135deg,#180018,#4b124c,#17001f);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Stars */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#ffb6df 1px,transparent 1px);
+    background-size:70px 70px,110px 110px;
+    opacity:.25;
+    pointer-events:none;
+}
+
+/* Main */
+.container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 20px;
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    font-size:clamp(38px,10vw,75px);
+    color:#ffd1ec;
+    text-shadow:0 0 20px #ff4fa3;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #ff4fa3; }
+    to{ text-shadow:0 0 35px #ff4fa3,0 0 60px #ff1493; }
+}
+
+.subtitle{
+    margin-top:15px;
+    font-size:20px;
+    color:#ffd9ef;
+}
+
+/* Cake */
+.cake{
+    font-size:90px;
+    margin:25px 0;
+    animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+/* Button */
+button{
+    border:none;
+    padding:15px 28px;
+    border-radius:30px;
+    background:linear-gradient(90deg,#ff4fa3,#c43cff);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 20px #ff4fa3;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* Surprise */
+#surprise{
+    display:none;
+    max-width:800px;
+    margin:40px auto;
+    padding:25px;
+    text-align:center;
+}
+
+.message{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+    padding:25px;
+    line-height:1.8;
+    box-shadow:0 0 30px rgba(255,0,150,.15);
+}
+
+.message h2{
+    color:#ffb8df;
+    margin-bottom:15px;
+}
+
+/* Gallery */
+.gallery{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    border:2px solid rgba(255,150,220,.4);
+    box-shadow:0 0 20px rgba(255,0,150,.2);
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:22px;
+    animation:float 6s linear forwards;
+    pointer-events:none;
+    z-index:5;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Balloons */
+.balloon{
+    position:fixed;
+    font-size:45px;
+    animation:balloonFloat 5s ease-in-out infinite;
+    z-index:1;
+}
+
+.b1{left:5%;top:20%;}
+.b2{right:5%;top:30%;}
+.b3{left:12%;bottom:15%;}
+.b4{right:12%;bottom:12%;}
+
+@keyframes balloonFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-25px);}
+}
+
+/* Music */
+.music{
+    margin-top:20px;
+    font-size:14px;
+    color:#ffc8e7;
+}
+
+@media(max-width:600px){
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:260px;
+    }
+
+    .cake{
+        font-size:75px;
+    }
+
+    .message{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Balloons -->
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+<div class="balloon b4">🎈</div>
+
+<div class="container">
+
+    <div class="cake">🎂</div>
+
+    <h1>Happy Birthday<br>Muskan 💗</h1>
+
+    <p class="subtitle">
+        Wishing you a beautiful and amazing birthday ✨
+    </p>
+
+    <br>
+
+    <button onclick="openSurprise()">
+        🎁 Open Your Surprise
+    </button>
+
+    <div class="music">
+        🎵 Birthday music will play when you open the surprise
+    </div>
+
+    <div id="surprise">
+
+        <div class="message">
+
+            <h2>💗 A Special Birthday Message 💗</h2>
+
+            <p>
+                Happy Birthday Muskan! 🎂✨
+            </p>
+
+            <p>
+                I hope your special day is filled with happiness,
+                smiles, fun and lots of beautiful memories. 🌸
+            </p>
+
+            <p>
+                May this new year of your life bring you
+                countless reasons to smile and many amazing moments. 💫
+            </p>
+
+            <p>
+                Keep smiling and keep shining! 💗✨
+            </p>
+
+            <br>
+
+            <h2>🎉 Have The Best Birthday Ever! 🎉</h2>
+
+        </div>
+
+        <!-- Photos -->
+        <div class="gallery">
+
+            <img src="photo1.jpg" alt="Birthday Memory 1">
+            <img src="photo2.jpg" alt="Birthday Memory 2">
+            <img src="photo3.jpg" alt="Birthday Memory 3">
+            <img src="photo4.jpg" alt="Birthday Memory 4">
+            <img src="photo5.jpg" alt="Birthday Memory 5">
+            <img src="photo6.jpg" alt="Birthday Memory 6">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Birthday Music -->
+<audio id="birthdayMusic" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function openSurprise(){
+
+    document.getElementById("surprise").style.display="block";
+
+    document.getElementById("surprise")
+    .scrollIntoView({behavior:"smooth"});
+
+    // Music
+    const music=document.getElementById("birthdayMusic");
+
+    music.play().catch(()=>{
+        console.log("Music needs user interaction.");
+    });
+
+    // Hearts
+    for(let i=0;i<25;i++){
+
+        setTimeout(()=>{
+
+            const heart=document.createElement("div");
+
+            heart.className="heart";
+
+            heart.innerHTML=["💗","💕","💖","💓","✨"][Math.floor(Math.random()*5)];
+
+            heart.style.left=Math.random()*100+"vw";
+
+            heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(()=>{
+                heart.remove();
+            },8000);
+
+        },i*150);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
