@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Muskan 💗</title>
+<title>For Muskan 🌸</title>
 
 <style>
 *{
@@ -13,10 +13,14 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
+    background:#100813;
+    color:#fff;
     font-family:Georgia,serif;
-    background:#120817;
-    color:white;
     overflow-x:hidden;
 }
 
@@ -25,75 +29,164 @@ body{
 .open-screen{
     position:fixed;
     inset:0;
-    z-index:1000;
+    z-index:9999;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:20px;
     background:
-        radial-gradient(circle at center,#6b245d,#24102d 55%,#100712);
-    transition:1s ease;
+        radial-gradient(circle at 50% 35%,#7d426b 0%,#35182f 30%,#130913 75%);
+    transition:1.2s ease;
 }
 
 .open-screen.hide{
     opacity:0;
-    visibility:hidden;
     transform:scale(1.15);
+    pointer-events:none;
 }
 
-.open-box{
-    animation:openFloat 3s ease-in-out infinite;
+.open-content{
+    position:relative;
+    z-index:3;
+    animation:float 3s ease-in-out infinite;
 }
 
-@keyframes openFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
-}
-
-.gift{
-    font-size:90px;
+.flower-big{
+    font-size:80px;
     margin-bottom:20px;
-    filter:drop-shadow(0 10px 25px #000);
+    filter:drop-shadow(0 0 25px #ffb4d9);
+}
+
+.open-small{
+    color:#e9bfd7;
+    font-family:Arial,sans-serif;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:15px;
 }
 
 .open-title{
-    font-size:34px;
-    margin-bottom:10px;
+    font-size:clamp(32px,8vw,48px);
+    margin-bottom:12px;
 }
 
 .open-sub{
-    color:#e9bddb;
-    margin-bottom:30px;
+    color:#d9b6ce;
     font-family:Arial,sans-serif;
+    font-size:14px;
+    margin-bottom:30px;
 }
 
 .open-btn{
-    border:0;
-    padding:16px 40px;
+    border:1px solid #ffffff55;
+    background:linear-gradient(135deg,#fff,#ffafd5);
+    color:#38172e;
+    padding:16px 45px;
     border-radius:50px;
-    font-size:17px;
+    font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    background:linear-gradient(135deg,#fff,#ff9dcc);
-    color:#35132c;
-    box-shadow:0 0 30px rgba(255,150,210,.4);
-    transition:.3s;
+    box-shadow:0 0 35px #ff9dcc55;
+    transition:.4s;
 }
 
 .open-btn:hover{
-    transform:scale(1.07);
+    transform:scale(1.08);
+    box-shadow:0 0 50px #ff9dcc88;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+}
+
+/* ================= BACKGROUND FLOWERS ================= */
+
+.flower{
+    position:fixed;
+    z-index:0;
+    pointer-events:none;
+    opacity:.5;
+    animation:sway 5s ease-in-out infinite;
+}
+
+.f1{
+    top:5%;
+    left:4%;
+    font-size:42px;
+}
+
+.f2{
+    top:12%;
+    right:5%;
+    font-size:35px;
+    animation-delay:1s;
+}
+
+.f3{
+    top:48%;
+    left:2%;
+    font-size:32px;
+    animation-delay:2s;
+}
+
+.f4{
+    top:70%;
+    right:3%;
+    font-size:40px;
+    animation-delay:1.5s;
+}
+
+.f5{
+    bottom:4%;
+    left:7%;
+    font-size:35px;
+}
+
+@keyframes sway{
+    0%,100%{transform:rotate(-5deg) translateY(0)}
+    50%{transform:rotate(7deg) translateY(-10px)}
+}
+
+/* ================= PETALS ================= */
+
+.petal{
+    position:fixed;
+    top:-30px;
+    z-index:1;
+    pointer-events:none;
+    animation:fall linear infinite;
+}
+
+.p1{left:10%;animation-duration:9s;animation-delay:1s}
+.p2{left:28%;animation-duration:12s;animation-delay:3s}
+.p3{left:50%;animation-duration:10s}
+.p4{left:72%;animation-duration:13s;animation-delay:2s}
+.p5{left:90%;animation-duration:11s;animation-delay:4s}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-30px) rotate(0deg);
+        opacity:0;
+    }
+    10%{opacity:.8}
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
 }
 
 /* ================= MAIN ================= */
 
 .main{
+    position:relative;
+    z-index:2;
     min-height:100vh;
-    padding:60px 15px;
+    padding:70px 15px;
     background:
-        radial-gradient(circle at 20% 10%,#7a285e55,transparent 30%),
-        radial-gradient(circle at 80% 80%,#c3478950,transparent 30%),
-        linear-gradient(135deg,#120817,#2c102f,#14091b);
+        radial-gradient(circle at 15% 15%,#8e376844,transparent 28%),
+        radial-gradient(circle at 85% 75%,#c04c8540,transparent 30%),
+        linear-gradient(145deg,#100813,#241025,#120914);
 }
 
 .container{
@@ -102,181 +195,232 @@ body{
     text-align:center;
 }
 
-/* Heading */
+/* ================= HERO ================= */
 
-.cake{
-    font-size:70px;
-    animation:bounce 2s infinite;
+.hero-flower{
+    font-size:60px;
+    margin-bottom:15px;
+    filter:drop-shadow(0 0 18px #ffafd6);
 }
 
-@keyframes bounce{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-12px)}
-}
-
-.small{
-    margin-top:15px;
-    color:#ffc9e5;
-    letter-spacing:4px;
-    font-size:13px;
+.label{
     font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:5px;
+    color:#e6bcd5;
+    margin-bottom:15px;
 }
 
 h1{
-    font-size:clamp(45px,10vw,80px);
-    line-height:1;
-    margin:12px 0;
-    background:linear-gradient(90deg,#fff,#ff9dcc,#fff);
+    font-size:clamp(48px,12vw,90px);
+    line-height:.95;
+    margin-bottom:18px;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ffc4df,
+        #fff,
+        #ffafd7
+    );
     -webkit-background-clip:text;
     color:transparent;
+    text-shadow:0 0 30px #ff9dcc33;
 }
 
 .name{
-    color:#ff9dcc;
+    font-style:italic;
 }
 
-.subtitle{
-    color:#f3cfe2;
-    font-size:19px;
-}
-
-.divider{
-    width:90px;
-    height:3px;
-    background:#ff9dcc;
-    border-radius:10px;
-    margin:28px auto;
-}
-
-/* Message */
-
-.message{
-    max-width:650px;
-    margin:auto;
-    padding:25px;
-    border-radius:25px;
-    background:#ffffff0d;
-    border:1px solid #ffffff1c;
-    backdrop-filter:blur(10px);
+.tagline{
     font-family:Arial,sans-serif;
-    color:#f8e8f2;
-    line-height:1.8;
+    color:#e6ccdc;
     font-size:16px;
+    line-height:1.7;
+}
+
+.ornament{
+    margin:28px auto;
+    color:#ffafd5;
+    font-size:22px;
+    letter-spacing:8px;
+}
+
+/* ================= LETTER ================= */
+
+.letter{
+    position:relative;
+    max-width:700px;
+    margin:0 auto;
+    padding:35px 28px;
+    border-radius:30px;
+    background:linear-gradient(
+        145deg,
+        #ffffff12,
+        #ffffff06
+    );
+    border:1px solid #ffffff1e;
+    box-shadow:
+        0 25px 70px #0008,
+        inset 0 0 40px #ffffff04;
+    backdrop-filter:blur(15px);
+}
+
+.letter::before{
+    content:"🌸";
+    position:absolute;
+    top:-18px;
+    left:25px;
+    font-size:30px;
+}
+
+.letter::after{
+    content:"🌷";
+    position:absolute;
+    bottom:-18px;
+    right:25px;
+    font-size:30px;
+}
+
+.letter-title{
+    font-size:27px;
+    color:#ffd5e7;
+    margin-bottom:20px;
+}
+
+.letter p{
+    font-family:Arial,sans-serif;
+    color:#eadce5;
+    font-size:16px;
+    line-height:2;
+}
+
+.highlight{
+    color:#ffb5d8;
+    font-weight:bold;
 }
 
 /* ================= PHOTOS ================= */
 
-.memories-title{
-    margin-top:55px;
-    margin-bottom:20px;
-    font-size:27px;
-    color:#ffd4e9;
+.section-title{
+    margin-top:65px;
+    margin-bottom:10px;
+    font-size:29px;
+    color:#ffe0ed;
+}
+
+.section-sub{
+    font-family:Arial,sans-serif;
+    color:#bfa7b9;
+    font-size:13px;
+    margin-bottom:25px;
 }
 
 .gallery{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:14px;
+    gap:15px;
 }
 
-.photo-box{
+.photo-card{
     position:relative;
+    aspect-ratio:4/5;
     overflow:hidden;
-    border-radius:22px;
-    aspect-ratio:1/1;
-    border:2px solid #ffffff25;
-    box-shadow:0 12px 30px #0008;
-    background:#28152d;
+    border-radius:24px;
+    padding:5px;
+    background:linear-gradient(135deg,#ffffff55,#ffafd544,#ffffff10);
+    box-shadow:0 15px 35px #0009;
+    transition:.5s ease;
 }
 
-.photo{
+.photo-card:nth-child(2),
+.photo-card:nth-child(5){
+    transform:translateY(25px);
+}
+
+.photo-card:hover{
+    transform:translateY(-5px) scale(1.035);
+}
+
+.photo-card:nth-child(2):hover,
+.photo-card:nth-child(5):hover{
+    transform:translateY(18px) scale(1.035);
+}
+
+.photo-card img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
-    transition:.5s ease;
+    border-radius:19px;
+    transition:.6s ease;
 }
 
-.photo-box:hover .photo{
-    transform:scale(1.1);
+.photo-card:hover img{
+    transform:scale(1.08);
 }
 
-.photo-box::after{
-    content:"💗";
+.photo-card span{
     position:absolute;
-    right:10px;
-    bottom:8px;
-    font-size:20px;
-    opacity:0;
-    transition:.3s;
+    bottom:12px;
+    right:12px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#180b16bb;
+    backdrop-filter:blur(5px);
 }
 
-.photo-box:hover::after{
-    opacity:1;
-}
-
-/* Bottom */
+/* ================= FINAL ================= */
 
 .final{
-    margin-top:45px;
+    margin-top:80px;
+    padding:45px 20px;
+}
+
+.final-flower{
+    font-size:45px;
+    margin-bottom:18px;
+}
+
+.final h2{
+    font-size:clamp(30px,7vw,48px);
+    color:#ffd5e7;
+    margin-bottom:18px;
+}
+
+.final p{
+    max-width:600px;
+    margin:auto;
+    font-family:Arial,sans-serif;
+    color:#d7c4d1;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.signature{
+    margin-top:28px;
+    color:#ffafd5;
+    font-style:italic;
     font-size:20px;
-    color:#ffd5e8;
-    line-height:1.7;
 }
 
 .footer{
-    margin-top:30px;
-    color:#a98ba3;
+    margin-top:35px;
+    color:#806b7c;
     font-family:Arial,sans-serif;
-    font-size:12px;
+    font-size:11px;
+    letter-spacing:2px;
 }
 
-/* Hearts */
-
-.heart{
-    position:fixed;
-    bottom:-30px;
-    z-index:2;
-    pointer-events:none;
-    animation:heartFloat 8s linear infinite;
-}
-
-@keyframes heartFloat{
-    0%{
-        transform:translateY(0) rotate(0);
-        opacity:0;
-    }
-    15%{opacity:.8}
-    100%{
-        transform:translateY(-110vh) rotate(360deg);
-        opacity:0;
-    }
-}
-
-.h1{left:8%;animation-delay:0s}
-.h2{left:25%;animation-delay:2s}
-.h3{left:50%;animation-delay:4s}
-.h4{left:72%;animation-delay:1s}
-.h5{left:90%;animation-delay:3s}
-
-/* Mobile */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
     .main{
-        padding:45px 12px;
-    }
-
-    .gift{
-        font-size:75px;
-    }
-
-    .open-title{
-        font-size:29px;
-    }
-
-    .cake{
-        font-size:60px;
+        padding:55px 12px;
     }
 
     .gallery{
@@ -284,17 +428,35 @@ h1{
         gap:10px;
     }
 
-    .photo-box{
-        border-radius:17px;
+    .photo-card{
+        border-radius:18px;
     }
 
-    .message{
-        padding:20px;
-        font-size:15px;
+    .photo-card:nth-child(2),
+    .photo-card:nth-child(5){
+        transform:none;
     }
 
-    .final{
-        font-size:18px;
+    .photo-card:nth-child(2):hover,
+    .photo-card:nth-child(5):hover{
+        transform:scale(1.035);
+    }
+
+    .letter{
+        padding:28px 20px;
+    }
+
+    .letter p{
+        font-size:14px;
+        line-height:1.9;
+    }
+
+    .flower-big{
+        font-size:70px;
+    }
+
+    .hero-flower{
+        font-size:50px;
     }
 }
 </style>
@@ -306,20 +468,24 @@ h1{
 
 <div class="open-screen" id="openScreen">
 
-    <div class="open-box">
+    <div class="open-content">
 
-        <div class="gift">🎁</div>
+        <div class="flower-big">🌸</div>
+
+        <div class="open-small">
+            A LITTLE SURPRISE
+        </div>
 
         <div class="open-title">
-            Something Special For You 💗
+            Made Especially For You
         </div>
 
         <div class="open-sub">
-            Tap the button to open your surprise ✨
+            There's something waiting inside... ✨
         </div>
 
-        <button class="open-btn" onclick="openBirthday()">
-            OPEN 💌
+        <button class="open-btn" onclick="openPage()">
+            OPEN THE SURPRISE 💌
         </button>
 
     </div>
@@ -327,103 +493,159 @@ h1{
 </div>
 
 
-<!-- FLOATING HEARTS -->
+<!-- FLOWERS -->
 
-<div class="heart h1">💗</div>
-<div class="heart h2">💖</div>
-<div class="heart h3">💕</div>
-<div class="heart h4">💗</div>
-<div class="heart h5">💞</div>
+<div class="flower f1">🌸</div>
+<div class="flower f2">🌷</div>
+<div class="flower f3">🌼</div>
+<div class="flower f4">🌺</div>
+<div class="flower f5">🌸</div>
 
 
-<!-- MAIN BIRTHDAY -->
+<!-- FALLING PETALS -->
+
+<div class="petal p1">🌸</div>
+<div class="petal p2">🌷</div>
+<div class="petal p3">🌸</div>
+<div class="petal p4">🌺</div>
+<div class="petal p5">🌷</div>
+
+
+<!-- MAIN PAGE -->
 
 <main class="main">
 
 <div class="container">
 
-    <div class="cake">🎂</div>
+    <div class="hero-flower">
+        🌸 ✨ 🌸
+    </div>
 
-    <div class="small">
-        TODAY IS YOUR SPECIAL DAY
+    <div class="label">
+        A SPECIAL DAY
     </div>
 
     <h1>
         Happy Birthday<br>
-        <span class="name">Muskan 💗</span>
+        <span class="name">Muskan</span> 💗
     </h1>
 
-    <p class="subtitle">
-        Wishing you happiness, smiles & beautiful memories ✨
-    </p>
+    <div class="tagline">
+        Today is not just another day...<br>
+        it's a day worth celebrating. 🌷
+    </div>
 
-    <div class="divider"></div>
+    <div class="ornament">
+        ❀ · ✦ · ❀
+    </div>
 
 
-    <div class="message">
+    <!-- LETTER -->
 
-        May this special day bring you
-        lots of happiness, beautiful memories
-        and countless reasons to smile. 🌸
+    <div class="letter">
 
-        <br><br>
+        <div class="letter-title">
+            A Little Birthday Note 🌸
+        </div>
 
-        Keep shining, keep smiling,
-        and always stay the amazing person you are. 💕✨
+        <p>
+            Some people make ordinary moments feel a little more
+            <span class="highlight">beautiful</span>,
+            and today is the perfect day to celebrate one of those people.
+        </p>
+
+        <br>
+
+        <p>
+            Muskan, I hope this new year of your life brings you
+            countless smiles, peaceful moments, beautiful memories
+            and everything that makes your heart happy. ✨
+        </p>
+
+        <br>
+
+        <p>
+            Keep smiling, keep growing and keep being
+            <span class="highlight">uniquely you</span>.
+            You deserve a day filled with happiness,
+            flowers and wonderful memories. 🌷
+        </p>
 
     </div>
 
 
-    <!-- MEMORIES -->
+    <!-- PHOTOS -->
 
-    <div class="memories-title">
-        ✨ Beautiful Memories ✨
+    <div class="section-title">
+        Memories 🌸
+    </div>
+
+    <div class="section-sub">
+        A few beautiful moments worth keeping forever ✨
     </div>
 
     <div class="gallery">
 
-        <div class="photo-box">
-            <img src="photo1.jpg" class="photo">
+        <div class="photo-card">
+            <img src="photo1.jpg" alt="Memory 1">
+            <span>💗</span>
         </div>
 
-        <div class="photo-box">
-            <img src="photo2.jpg" class="photo">
+        <div class="photo-card">
+            <img src="photo2.jpg" alt="Memory 2">
+            <span>🌸</span>
         </div>
 
-        <div class="photo-box">
-            <img src="photo3.jpg" class="photo">
+        <div class="photo-card">
+            <img src="photo3.jpg" alt="Memory 3">
+            <span>✨</span>
         </div>
 
-        <div class="photo-box">
-            <img src="photo4.jpg" class="photo">
+        <div class="photo-card">
+            <img src="photo4.jpg" alt="Memory 4">
+            <span>💕</span>
         </div>
 
-        <div class="photo-box">
-            <img src="photo5.jpg" class="photo">
+        <div class="photo-card">
+            <img src="photo5.jpg" alt="Memory 5">
+            <span>🌷</span>
         </div>
 
-        <div class="photo-box">
-            <img src="photo6.jpg" class="photo">
+        <div class="photo-card">
+            <img src="photo6.jpg" alt="Memory 6">
+            <span>💖</span>
         </div>
 
     </div>
 
+
+    <!-- FINAL -->
 
     <div class="final">
 
-        Once again...<br>
+        <div class="final-flower">
+            🌸 🌷 🌸
+        </div>
 
-        <strong>Happy Birthday Muskan! 🎂💗</strong>
+        <h2>
+            Once Again,<br>
+            Happy Birthday Muskan! 🎂
+        </h2>
 
-        <br>
+        <p>
+            May the coming year be full of new memories,
+            unexpected happiness, beautiful moments
+            and plenty of reasons to smile.
+        </p>
 
-        May your day be as beautiful as your smile. ✨
+        <div class="signature">
+            With lots of good wishes 💗
+        </div>
 
-    </div>
+        <div class="footer">
+            MADE WITH CARE • FOR MUSKAN
+        </div>
 
-
-    <div class="footer">
-        Made with 💗
     </div>
 
 </div>
@@ -433,7 +655,7 @@ h1{
 
 <script>
 
-function openBirthday(){
+function openPage(){
 
     document.getElementById("openScreen")
     .classList.add("hide");
