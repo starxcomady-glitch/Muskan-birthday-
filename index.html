@@ -18,74 +18,78 @@ html{
 }
 
 body{
-    font-family:Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
     background:
-        radial-gradient(circle at 20% 10%, rgba(255,190,210,.35), transparent 30%),
-        radial-gradient(circle at 80% 90%, rgba(190,210,255,.3), transparent 30%),
-        linear-gradient(135deg,#fff7fa,#f8f3ff,#fff);
+        radial-gradient(circle at 15% 10%, rgba(255,180,210,.30), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(190,200,255,.25), transparent 32%),
+        linear-gradient(135deg,#fff8fb,#faf7ff,#ffffff);
     color:#392936;
     overflow-x:hidden;
 }
 
-/* OPEN SCREEN */
+/* ================= INTRO ================= */
 
 #intro{
     position:fixed;
     inset:0;
-    z-index:1000;
+    z-index:9999;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
     background:
-        radial-gradient(circle at center,rgba(255,255,255,.95),rgba(255,225,237,.9)),
-        linear-gradient(135deg,#fff,#ffe5ef);
-    transition:1s ease;
+        radial-gradient(circle at center,
+        rgba(255,255,255,.98),
+        rgba(255,225,237,.95));
+    transition:1.2s ease;
 }
 
 .intro-box{
-    padding:40px 25px;
-    animation:fadeUp 1.5s ease;
+    padding:40px 22px;
+    animation:introUp 1.5s ease;
 }
 
 .small{
-    font-size:14px;
+    font-family:Arial,sans-serif;
+    font-size:12px;
     letter-spacing:5px;
     color:#a66a83;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .intro-title{
-    font-size:clamp(38px,10vw,75px);
-    color:#7d3f5b;
-    margin-bottom:30px;
-    text-shadow:0 8px 30px rgba(125,63,91,.15);
+    font-size:clamp(45px,12vw,85px);
+    color:#713951;
+    margin-bottom:35px;
+    text-shadow:0 10px 35px rgba(125,63,91,.16);
 }
 
 .open-btn{
     border:0;
-    padding:17px 34px;
+    padding:17px 32px;
     border-radius:50px;
-    font-size:16px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
     letter-spacing:2px;
     color:white;
-    background:linear-gradient(135deg,#b76e8d,#7d3f5b);
-    box-shadow:0 15px 35px rgba(125,63,91,.3);
+    background:linear-gradient(135deg,#c47b99,#713951);
+    box-shadow:0 15px 40px rgba(125,63,91,.30);
     cursor:pointer;
-    transition:.35s;
+    transition:.4s ease;
 }
 
 .open-btn:hover{
-    transform:translateY(-4px) scale(1.04);
-    box-shadow:0 20px 45px rgba(125,63,91,.4);
+    transform:translateY(-5px) scale(1.04);
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
 
 main{
     display:none;
-    animation:pageIn 1.4s ease;
+    animation:pageIn 1.5s ease;
 }
+
+/* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
@@ -94,6 +98,7 @@ main{
     justify-content:center;
     text-align:center;
     padding:70px 20px;
+    position:relative;
 }
 
 .hero-content{
@@ -101,17 +106,20 @@ main{
 }
 
 .eyebrow{
-    font-size:13px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
     letter-spacing:5px;
     color:#a66a83;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 h1{
     font-size:clamp(48px,12vw,100px);
-    line-height:1;
+    line-height:1.05;
+    font-weight:normal;
     color:#713951;
-    margin-bottom:25px;
+    margin-bottom:28px;
+    animation:titleReveal 1.5s ease;
 }
 
 .hero p{
@@ -120,33 +128,41 @@ h1{
     font-size:18px;
     line-height:1.9;
     color:#725b67;
+    animation:fadeUp 1.8s ease;
 }
 
-/* MESSAGE */
+/* ================= MESSAGE ================= */
 
 .message{
-    padding:80px 20px;
+    padding:100px 20px;
     text-align:center;
 }
 
 .card{
     max-width:760px;
     margin:auto;
-    padding:45px 30px;
+    padding:50px 32px;
     border:1px solid rgba(255,255,255,.8);
-    border-radius:30px;
-    background:rgba(255,255,255,.48);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    border-radius:32px;
+    background:rgba(255,255,255,.50);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
     box-shadow:
-        0 25px 70px rgba(100,60,80,.12),
-        inset 0 1px 0 rgba(255,255,255,.8);
+        0 30px 80px rgba(100,60,80,.12),
+        inset 0 1px 0 rgba(255,255,255,.9);
+    transition:.5s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 35px 90px rgba(100,60,80,.17);
 }
 
 .card h2{
     color:#7d3f5b;
-    font-size:32px;
-    margin-bottom:20px;
+    font-size:34px;
+    font-weight:normal;
+    margin-bottom:22px;
 }
 
 .card p{
@@ -155,54 +171,62 @@ h1{
     color:#705966;
 }
 
-/* PREMIUM PHOTOS */
+/* ================= GALLERY ================= */
 
 .gallery-section{
-    padding:90px 18px;
+    padding:110px 18px;
     text-align:center;
 }
 
 .section-label{
-    font-size:12px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
     letter-spacing:5px;
     color:#a66a83;
-    margin-bottom:12px;
+    margin-bottom:14px;
 }
 
 .gallery-title{
-    font-size:42px;
+    font-size:44px;
+    font-weight:normal;
     color:#713951;
-    margin-bottom:50px;
+    margin-bottom:60px;
 }
 
 .gallery{
-    max-width:1050px;
+    max-width:1100px;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:22px;
+    gap:28px;
 }
 
 .photo-card{
     position:relative;
     overflow:hidden;
-    border-radius:25px;
+    border-radius:28px;
     padding:7px;
-    background:rgba(255,255,255,.65);
+    background:rgba(255,255,255,.72);
     box-shadow:
-        0 18px 45px rgba(75,45,60,.14),
-        inset 0 0 0 1px rgba(255,255,255,.7);
-    transition:.5s cubic-bezier(.2,.8,.2,1);
+        0 20px 55px rgba(75,45,60,.13),
+        inset 0 0 0 1px rgba(255,255,255,.8);
+
+    opacity:0;
+    transform:translateY(70px) scale(.96);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease;
+}
+
+.photo-card.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
 }
 
 .photo-card:nth-child(1),
 .photo-card:nth-child(4){
-    transform:translateY(-15px);
-}
-
-.photo-card:hover{
-    transform:translateY(-10px) scale(1.025);
-    box-shadow:0 28px 65px rgba(75,45,60,.22);
+    margin-top:-18px;
 }
 
 .photo-card img{
@@ -210,15 +234,26 @@ h1{
     width:100%;
     aspect-ratio:4/5;
     object-fit:cover;
-    border-radius:20px;
-    transition:.7s ease;
+    border-radius:22px;
+
+    transform:scale(1.04);
+    transition:transform 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+.photo-card.show img{
+    transform:scale(1);
+}
+
+.photo-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 30px 70px rgba(75,45,60,.23);
 }
 
 .photo-card:hover img{
-    transform:scale(1.06);
+    transform:scale(1.07);
 }
 
-/* FINAL */
+/* ================= FINAL ================= */
 
 .final{
     min-height:65vh;
@@ -226,17 +261,19 @@ h1{
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:70px 20px;
+    padding:80px 20px;
 }
 
 .final-box{
-    max-width:700px;
+    max-width:720px;
 }
 
 .final h2{
     font-size:clamp(38px,9vw,65px);
+    font-weight:normal;
+    line-height:1.15;
     color:#713951;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .final p{
@@ -247,40 +284,58 @@ h1{
 
 footer{
     text-align:center;
-    padding:30px;
+    padding:35px 20px;
+    font-family:Arial,sans-serif;
     color:#a68191;
-    font-size:13px;
+    font-size:12px;
+    letter-spacing:1px;
 }
 
-/* FLOWERS */
+/* ================= FLOWERS ================= */
 
 .flower{
     position:fixed;
-    top:-50px;
-    z-index:2000;
+    top:-60px;
+    z-index:8000;
     pointer-events:none;
     animation:fall linear forwards;
-    filter:drop-shadow(0 4px 5px rgba(0,0,0,.08));
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,.08));
+    user-select:none;
 }
 
 @keyframes fall{
+
     0%{
-        transform:translateY(-50px) rotate(0deg);
+        transform:
+            translate3d(0,-60px,0)
+            rotate(0deg);
         opacity:0;
     }
+
     10%{
         opacity:1;
     }
+
+    50%{
+        transform:
+            translate3d(35px,55vh,0)
+            rotate(220deg);
+    }
+
     100%{
-        transform:translateY(110vh) rotate(500deg);
-        opacity:.9;
+        transform:
+            translate3d(-40px,110vh,0)
+            rotate(500deg);
+        opacity:.15;
     }
 }
 
-@keyframes fadeUp{
+/* ================= ANIMATIONS ================= */
+
+@keyframes introUp{
     from{
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(35px);
     }
     to{
         opacity:1;
@@ -288,42 +343,71 @@ footer{
     }
 }
 
-@keyframes pageIn{
+@keyframes fadeUp{
     from{
         opacity:0;
-        transform:scale(.98);
+        transform:translateY(25px);
     }
     to{
         opacity:1;
-        transform:scale(1);
+        transform:translateY(0);
     }
 }
 
-/* MOBILE */
+@keyframes titleReveal{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:650px){
 
     .gallery{
         grid-template-columns:1fr;
-        gap:18px;
+        gap:22px;
         max-width:430px;
     }
 
     .photo-card:nth-child(1),
     .photo-card:nth-child(4){
-        transform:none;
+        margin-top:0;
     }
 
     .gallery-title{
-        font-size:34px;
+        font-size:36px;
+        margin-bottom:42px;
     }
 
     .card{
-        padding:35px 22px;
+        padding:38px 22px;
+    }
+
+    .card p{
+        font-size:16px;
     }
 
     .hero p{
         font-size:16px;
+    }
+
+    .small{
+        letter-spacing:4px;
     }
 }
 </style>
@@ -331,11 +415,15 @@ footer{
 
 <body>
 
-<!-- OPEN SCREEN -->
+<!-- ================= OPEN SCREEN ================= -->
 
 <section id="intro">
+
     <div class="intro-box">
-        <div class="small">A LITTLE SURPRISE FOR</div>
+
+        <div class="small">
+            A LITTLE SURPRISE FOR
+        </div>
 
         <div class="intro-title">
             Muskan 💗
@@ -344,15 +432,20 @@ footer{
         <button class="open-btn" onclick="openBirthday()">
             OPEN THE SURPRISE ✨
         </button>
+
     </div>
+
 </section>
 
 
-<!-- BIRTHDAY PAGE -->
+<!-- ================= BIRTHDAY ================= -->
 
 <main id="birthday">
 
+    <!-- HERO -->
+
     <section class="hero">
+
         <div class="hero-content">
 
             <div class="eyebrow">
@@ -370,20 +463,27 @@ footer{
             </p>
 
         </div>
+
     </section>
 
+
+    <!-- MESSAGE -->
 
     <section class="message">
 
         <div class="card">
 
-            <h2>For You ✨</h2>
+            <h2>
+                For You ✨
+            </h2>
 
             <p>
                 Some people make ordinary moments feel special.
                 I hope this little surprise brings a smile to your face
                 and makes your birthday a little more memorable.
+
                 <br><br>
+
                 Keep smiling, keep shining and enjoy your special day. 💗
             </p>
 
@@ -435,12 +535,15 @@ footer{
     </section>
 
 
+    <!-- FINAL -->
+
     <section class="final">
 
         <div class="final-box">
 
             <h2>
-                Stay Happy. Stay Amazing. 💗
+                Stay Happy.<br>
+                Stay Amazing. 💗
             </h2>
 
             <p>
@@ -462,53 +565,131 @@ footer{
 
 <script>
 
+/* ================= OPEN ================= */
+
 function openBirthday(){
 
-    document.getElementById("intro").style.opacity="0";
+    const intro = document.getElementById("intro");
+    const birthday = document.getElementById("birthday");
+
+    intro.style.opacity = "0";
 
     setTimeout(function(){
 
-        document.getElementById("intro").style.display="none";
-        document.getElementById("birthday").style.display="block";
+        intro.style.display = "none";
+        birthday.style.display = "block";
 
-        flowerRain();
+        startFlowerRain();
+        setupPhotoAnimation();
 
     },800);
 }
 
 
-function flowerRain(){
+/* ================= CONTINUOUS FLOWERS ================= */
 
-    const flowers=["🌸","🌷","🌹","🌺","💮"];
+const flowers = [
+    "🌸",
+    "🌷",
+    "🌹",
+    "🌺",
+    "💮",
+    "🌼",
+    "✨",
+    "💗"
+];
 
-    for(let i=0;i<45;i++){
+function createFlower(){
+
+    const flower = document.createElement("div");
+
+    flower.className = "flower";
+
+    flower.innerHTML =
+        flowers[Math.floor(Math.random()*flowers.length)];
+
+    flower.style.left =
+        Math.random()*100 + "vw";
+
+    flower.style.fontSize =
+        (15 + Math.random()*22) + "px";
+
+    flower.style.animationDuration =
+        (5 + Math.random()*7) + "s";
+
+    flower.style.opacity =
+        (.5 + Math.random()*.5);
+
+    document.body.appendChild(flower);
+
+    setTimeout(function(){
+
+        flower.remove();
+
+    },13000);
+}
+
+
+function startFlowerRain(){
+
+    /* Initial burst */
+
+    for(let i=0;i<55;i++){
 
         setTimeout(function(){
-
-            const flower=document.createElement("div");
-
-            flower.className="flower";
-
-            flower.innerHTML=
-                flowers[Math.floor(Math.random()*flowers.length)];
-
-            flower.style.left=Math.random()*100+"vw";
-
-            flower.style.fontSize=
-                (16+Math.random()*18)+"px";
-
-            flower.style.animationDuration=
-                (4+Math.random()*5)+"s";
-
-            document.body.appendChild(flower);
-
-            setTimeout(function(){
-                flower.remove();
-            },9000);
-
-        },i*80);
+            createFlower();
+        },i*70);
 
     }
+
+    /* Continuous flowers */
+
+    setInterval(function(){
+
+        createFlower();
+
+    },260);
+
+}
+
+
+/* ================= PHOTO ANIMATION ================= */
+
+function setupPhotoAnimation(){
+
+    const cards =
+        document.querySelectorAll(".photo-card");
+
+    const observer =
+        new IntersectionObserver(
+
+            function(entries){
+
+                entries.forEach(function(entry){
+
+                    if(entry.isIntersecting){
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold:0.15
+            }
+
+        );
+
+
+    cards.forEach(function(card){
+
+        observer.observe(card);
+
+    });
+
 }
 
 </script>
